@@ -1,0 +1,14 @@
+.FileUpload {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  padding: 1em;
+}
+
+.TextField {
+  margin-right: 1em;
+}
+
+input[type="file"] {
+  display: none;
+}

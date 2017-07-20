@@ -1,0 +1,10 @@
+.Score {
+  display: flex;
+  flex-direction: column;
+  align-content: center;
+  flex: 1;
+}
+
+.Submit {
+  align-self: center;
+}

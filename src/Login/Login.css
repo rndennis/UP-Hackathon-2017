@@ -1,0 +1,15 @@
+.Login {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
+.TextFields {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+}
+
+.ContentBlock {
+  align-self: center;
+}

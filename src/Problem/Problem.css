@@ -1,0 +1,10 @@
+.Problem {
+  display: flex;
+  flex-direction: column;
+  align-content: center;
+  flex: 1;
+}
+.Table {
+  width: 300px;
+  margin: auto;
+}
