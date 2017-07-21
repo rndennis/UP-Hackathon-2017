@@ -1,7 +1,11 @@
 .Header {
   border-bottom: 1px solid #ddd;
 }
- 
+
+.NavigationButton {
+  margin: 0 1em;
+}
+
 .Logo {
   font-family: 'Cutive Mono', serif;
   font-size: 1.5em;

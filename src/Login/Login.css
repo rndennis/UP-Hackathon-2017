@@ -1,7 +1,6 @@
 .Login {
   display: flex;
   flex-direction: column;
-  justify-content: center;
 }
 
 .TextFields {
@@ -10,6 +9,6 @@
   justify-content: center;
 }
 
-.ContentBlock {
-  align-self: center;
+.UsernameField {
+  margin-right: 1em;
 }

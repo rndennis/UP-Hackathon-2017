@@ -8,17 +8,14 @@ class Login extends Component {
   render() {
     return (
       <div className="Login">
-        <div className="ContentBlock">
-          <p>Enter the username and password provided to you:</p>
-        </div>
         <div className="TextFields">
-          <div className="TextField">
+          <div className="UsernameField">
             <TextField
-              floatingLabelText="Team Name"
+              floatingLabelText="Username"
               value={this.props.username}
               onChange={this.props.onChangeUsername}/>
           </div>
-          <div className="TextField">
+          <div className="PasswordField">
             <TextField
               type="password"
               floatingLabelText="Password"

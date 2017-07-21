@@ -4,8 +4,6 @@ import MuiThemeProvider from 'material-ui/styles/MuiThemeProvider';
 import getMuiTheme from 'material-ui/styles/getMuiTheme';
 import injectTapEventPlugin from 'react-tap-event-plugin';
 
-import * as firebase from 'firebase';
-
 import Header from './Header/Header';
 import Problem from './Problem/Problem';
 import Score from './Score/Score';
@@ -27,13 +25,6 @@ const theme = getMuiTheme({
 });
 
 class App extends Component {
-  constructor(props) {
-    super(props);
-    const ref = firebase.database().ref('credentials/test');
-    ref.once('value').then((snapshot) => {
-      console.log(snapshot.val());
-    });
-  }
   render() {
     return (
       <MuiThemeProvider muiTheme={theme}>

@@ -5,6 +5,26 @@
   flex: 1;
 }
 
-.Submit {
+.Login, .FileUpload {
+  margin-bottom: 1em;
+}
+
+.Submit, .Accuracy, .ErrorMessage {
   align-self: center;
+}
+
+.Accuracy {
+  padding: 1em;
+  font-size: 1em;
+  font-weight: lighter;
+  font-family: 'Cutive Mono', serif;
+}
+
+.ErrorMessage {
+  color: #ff0000;
+  font-size: 1em;
+  font-weight: lighter;
+  font-family: 'Cutive Mono', serif;
+  padding: 1em;
+
 }

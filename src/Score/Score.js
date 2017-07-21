@@ -54,9 +54,8 @@ class Score extends Component {
 
     fetch(request)
       .then((response) => response.json())
-      .then((data) => {
-        this.setState({accuracy: data.accuracy});
-      });
+      .then((data) => { this.setState({accuracy: data.accuracy, message: data.message}); })
+      .catch((error) => console.log(error));
   }
   render() {
     return (
@@ -75,7 +74,10 @@ class Score extends Component {
           <RaisedButton label="Submit" primary={true} onClick={this.handleSubmit}/>
         </div>
         <div className="Accuracy">
-          <h2>{this.state.accuracy}</h2>
+          {this.state.accuracy}
+        </div>
+        <div className="ErrorMessage">
+          {this.state.message}
         </div>
       </div>
     );

@@ -27,7 +27,7 @@ class FileUpload extends Component {
   render() {
     return (
       <div className="FileUpload">
-        <div className="TextField">
+        <div className="FileField">
           <TextField
             disabled
             hintText="No file selected"

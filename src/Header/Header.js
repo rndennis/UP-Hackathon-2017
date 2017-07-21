@@ -19,13 +19,13 @@ const LogoText = () => (
 const Navigation = () => (
   <ToolbarGroup lastChild={true}>
     <ToolbarSeparator/>
-    <Link to="/">
+    <Link className="NavigationButton" to="/">
       <FlatButton label="Problem"/>
     </Link>
-    <Link to="/score">
+    <Link className="NavigationButton" to="/score">
       <FlatButton label="Score"/>
     </Link>
-    <Link to="/judge">
+    <Link className="NavigationButton" to="/judge">
       <FlatButton label="Judge"/>
     </Link>
   </ToolbarGroup>
