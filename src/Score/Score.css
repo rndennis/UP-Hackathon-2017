@@ -5,6 +5,12 @@
   flex: 1;
 }
 
+.Form {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+}
+
 .Instructions {
   width: 50%;
   align-self: center;
@@ -17,18 +23,14 @@
   flex: 1;
 }
 
-.Login, .FileUpload {
-  margin-bottom: 1em;
-}
-
-.Submit, .Accuracy, .ErrorMessage {
+.Accuracy, .ErrorMessage {
   align-self: center;
 }
 
 .Accuracy {
   padding: 1em;
-  font-size: 1em;
-  font-weight: lighter;
+  font-size: 2em;
+  font-weight: bold;
   font-family: 'Cutive Mono', serif;
 }
 

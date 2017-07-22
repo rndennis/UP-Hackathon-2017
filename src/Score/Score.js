@@ -3,7 +3,7 @@ import RaisedButton from 'material-ui/RaisedButton';
 import {Card, CardHeader, CardText} from 'material-ui/Card';
 import CircularProgress from 'material-ui/CircularProgress';
 import FileUpload from '../FileUpload/FileUpload';
-import {auth} from '../firebase';
+import {auth, db} from '../firebase';
 
 import './Score.css';
 
@@ -17,7 +17,13 @@ class Score extends Component {
           .history
           .push('/login');
       } else {
-        this.setState({isLoading: false});
+        const prefix = user.email.split('@')[0];
+        db.ref(`/participants/${prefix}`)
+          .once('value')
+          .then((snapshot) => {
+            this.setState({teamName: snapshot.val()});
+            this.setState({isLoading: false});
+          });
       }
     });
   }
@@ -38,7 +44,8 @@ class Score extends Component {
     this.setState({fileText: event.target.result});
   }
   handleSubmit() {
-    const url = 'http://hackathon-api-dev.us-east-2.elasticbeanstalk.com/hackathon/api/test';
+    this.setState({isServiceRunning: true});
+    const url = 'https://hackathon.chezgoose.com/hackathon/api/test';
     const content = this.state.fileText;
 
     const headers = new Headers();
@@ -51,16 +58,34 @@ class Score extends Component {
       body: content
     });
 
-    fetch(request).then((response) => response.json()).then((data) => {
-      this.setState({accuracy: data.accuracy, message: data.message});
-    }).catch((error) => {
-      this.setState({message: 'Uncaught service error - please let someone know!'});
-    });
+    if (content) {
+      fetch(request).then((response) => response.json()).then((data) => {
+        this.setState({accuracy: data.accuracy, message: data.message, isServiceRunning: false});
+        const newScoresRef = db.ref().child('scores').push();
+        newScoresRef.set({
+          teamName: (this.props.teamName) ? this.props.teamName : 'Anonymous',
+          accuracy: (data.accuracy) ? data.accuracy : '0'
+        });
+      }).catch((error) => {
+        this.setState({message: 'Unknown service error - please let someone know!', isServiceRunning: false});
+      });
+    } else {
+      this.setState({message: 'You need to select a file', isServiceRunning: false});
+    }
+  }
+  getSubmitButton() {
+    return (this.state.isServiceRunning)
+      ? <div className="ServiceLoader">
+          <CircularProgress/>
+        </div>
+      : <div className="Submit">
+        <RaisedButton label="Submit" primary={true} onClick={this.handleSubmit}/>
+      </div>
   }
   getResult() {
     return (this.state.accuracy)
       ? <div className="Accuracy">
-          {this.state.accuracy}
+          Score: {this.state.accuracy}%
         </div>
       : <div className="ErrorMessage">
         {this.state.message}
@@ -78,19 +103,17 @@ class Score extends Component {
               showExpandableButton={true}/>
             <CardText expandable={true}>
               Submit the CSV file that contains your predictions. If you forget what the
-              format of the data is, refer to the
-              <a href="/">problem description</a>. The dates in your submission should range
-              from 2014-01-01 to 2014-12-31. You should see an accuracy score upon a
-              successful submission.
-              <b>If you run into an issue with the interface, talk to Renee.</b>
+              format of the data is, refer to the <a href="/">problem description</a>. The dates in your submission should range
+              from 2014-01-01 to 2014-12-31. You should see an accuracy score upon a successful
+              submission. <b>If you run into an issue with the interface, talk to Renee or Andrew.</b>
             </CardText>
           </Card>
         </div>
-        <div className="FileUpload">
-          <FileUpload onSelectFile={this.handleSelectFile}/>
-        </div>
-        <div className="Submit">
-          <RaisedButton label="Submit" primary={true} onClick={this.handleSubmit}/>
+        <div className="Form">
+          <div className="FileUpload">
+            <FileUpload onSelectFile={this.handleSelectFile}/>
+          </div>
+          {this.getSubmitButton()}
         </div>
         {this.getResult()}
       </div>);

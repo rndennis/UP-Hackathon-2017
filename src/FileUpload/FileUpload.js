@@ -11,18 +11,22 @@ class FileUpload extends Component {
     this.state = {
       selectedFileName: ''
     };
-    this.handleChange = this.handleChange.bind(this);
+    this.handleChange = this
+      .handleChange
+      .bind(this);
   }
   handleChange(event) {
     const reader = new FileReader();
     const file = event.target.files[0];
-    this.setState({
-      selectedFileName: file.name
-    });
-    reader.onload = (event) => {
-      this.props.onSelectFile(event);
-    };
-    reader.readAsText(file);
+    if (file) {
+      this.setState({selectedFileName: file.name});
+      reader.onload = (event) => {
+        this
+          .props
+          .onSelectFile(event);
+      };
+      reader.readAsText(file);
+    }
   }
   render() {
     return (
@@ -31,13 +35,10 @@ class FileUpload extends Component {
           <TextField
             disabled
             hintText="No file selected"
-            value={this.state.selectedFileName}>
-          </TextField>
-        </div> 
-        <div className="RaisedButton"> 
-          <RaisedButton
-            containerElement="label"
-            label="Select File">
+            value={this.state.selectedFileName}></TextField>
+        </div>
+        <div className="SelectFile">
+          <RaisedButton containerElement="label" label="Select File">
             <input type="file" onChange={this.handleChange}/>
           </RaisedButton>
         </div>

@@ -28,6 +28,7 @@ class Header extends Component {
           .once('value')
           .then((snapshot) => {
             this.setState({teamName: snapshot.val()});
+            this.props.updateTeamName(snapshot.val());
           });
       }
     });
@@ -52,9 +53,12 @@ class Header extends Component {
             <Link className="NavigationButton" to="/score">
               <FlatButton label="Score"/>
             </Link>
-            <Link className="NavigationButton" to="/judge">
-              <FlatButton label="Judge"/>
+            <Link className="NavigationButton" to="/faq">
+              <FlatButton label="FAQ"></FlatButton>
             </Link>
+            {/* <Link className="NavigationButton" to="/judge">
+              <FlatButton label="Judge"/>
+            </Link> */}
           </ToolbarGroup>
         </Toolbar>
       </div>

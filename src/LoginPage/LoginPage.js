@@ -38,6 +38,9 @@ class LoginPage extends Component {
   render() {
     return (
       <div className="LoginPage">
+        <div className="LoginInstructions">
+          <p>Log in using your email from the hackathon sign up page and the password provided to your team. </p>
+        </div>
         <div className="Login">
           <Login
             username={this.state.username}
@@ -46,7 +49,7 @@ class LoginPage extends Component {
             onChangePassword={this.handleChangePassword}/>
         </div>
         <div className="LoginButton">
-          <RaisedButton label="Login" primary={true} onClick={this.handleLogin}/>
+          <RaisedButton label="Log In" primary={true} onClick={this.handleLogin}/>
         </div>
       </div>
     );

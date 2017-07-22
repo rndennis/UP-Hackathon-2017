@@ -8,6 +8,12 @@
   width: 300px;
   margin: auto;
 }
+.TableFooter {
+  align-self: center;
+  font-family: 'Roboto', sans-serif;
+  color: #444;
+  font-weight: lighter;
+}
 .ProblemPlaceholder {
   font-style: italic;
   align-self: center;

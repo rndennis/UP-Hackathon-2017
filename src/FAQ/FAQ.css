@@ -1,11 +1,12 @@
-.LoginPage {
+.FAQ {
   display: flex;
   flex-direction: column;
+  align-content: center;
   flex: 1;
 }
-.LoginButton {
+
+.Question {
+  width: 80%;
   align-self: center;
-}
-.LoginInstructions {
-  align-self: center;
+  margin-top: 1em;
 }
