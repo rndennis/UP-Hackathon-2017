@@ -18,12 +18,7 @@ const LogoText = () => (
 );
 
 class Header extends Component {
-  componentWillUnmount() {
-    this.state.unsubscribe();
-  }
-  constructor(props) {
-    super(props);
-    this.state = {};
+  componentWillMount() {
     const unsubscribe = auth.onAuthStateChanged((user) => {
       if (user) {
         const prefix = user.email.split('@')[0];
@@ -36,6 +31,13 @@ class Header extends Component {
       }
     });
     this.setState({unsubscribe});
+  }
+  componentWillUnmount() {
+    this.state.unsubscribe();
+  }
+  constructor(props) {
+    super(props);
+    this.state = {};
   }
   render() {
     return (

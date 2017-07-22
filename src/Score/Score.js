@@ -89,7 +89,7 @@ class Score extends Component {
   getResult() {
     return (this.state.accuracy)
       ? <div className="Accuracy">
-          Score: {this.state.accuracy}%
+          Score: {this.state.accuracy.toFixed(4)}%
         </div>
       : <div className="ErrorMessage">
         {this.state.message}
@@ -102,7 +102,7 @@ class Score extends Component {
         <div className="Instructions">
           <Card>
             <CardHeader
-              title="Instructions for Testing"
+              title={(<b>Instructions for Testing</b>)}
               actAsExpander={true}
               showExpandableButton={true}/>
             <CardText expandable={true}>

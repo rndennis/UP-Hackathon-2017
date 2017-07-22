@@ -11,7 +11,7 @@ class FAQ extends Component {
         <div className="Question">
           <Card>
             <CardHeader
-              title="7-Day Carloadings vs Daily Carloadings?"
+              title={(<b>7-Day Carloadings vs Daily Carloadings?</b>)}
               actAsExpander={true}
               showExpandableButton={true}/>
             <CardText expandable={true}>
@@ -22,7 +22,7 @@ class FAQ extends Component {
         <div className="Question">
           <Card>
             <CardHeader
-              title="Will we be able to use data from 2015?"
+              title={(<b>Will we be able to use data from 2015?</b>)}
               actAsExpander={true}
               showExpandableButton={true}/>
             <CardText expandable={true}>
