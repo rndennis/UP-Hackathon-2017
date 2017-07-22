@@ -21,4 +21,3 @@ yarn-debug.log*
 yarn-error.log*
 
 src/Private/firebase.config.js
-src/Private/problem-description.js
