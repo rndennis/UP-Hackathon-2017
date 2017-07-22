@@ -10,3 +10,7 @@
   align-self: center;
   margin-top: 1em;
 }
+
+CardHeader {
+  font-weight: 500;
+}
