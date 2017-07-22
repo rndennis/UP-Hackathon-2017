@@ -8,3 +8,8 @@
   width: 300px;
   margin: auto;
 }
+.ProblemPlaceholder {
+  font-style: italic;
+  align-self: center;
+  flex: 1;
+}

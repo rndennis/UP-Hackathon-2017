@@ -1,12 +1,8 @@
-.Judge {
-  font-style: italic;
+.LoginPage {
   display: flex;
   flex-direction: column;
-  align-self: center;
   flex: 1;
 }
-
-.Loader {
+.LoginButton {
   align-self: center;
-  flex: 1;
 }

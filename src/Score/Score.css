@@ -5,6 +5,18 @@
   flex: 1;
 }
 
+.Instructions {
+  width: 50%;
+  align-self: center;
+  margin: 1em 1em 2em 1em;
+}
+
+.Loader {
+  align-self: center;
+  padding: 2em;
+  flex: 1;
+}
+
 .Login, .FileUpload {
   margin-bottom: 1em;
 }
@@ -21,10 +33,9 @@
 }
 
 .ErrorMessage {
-  color: #ff0000;
-  font-size: 1em;
-  font-weight: lighter;
+  color: #cc0000;
+  font-size: 1.5em;
+  font-weight: bold;
   font-family: 'Cutive Mono', serif;
   padding: 1em;
-
 }
