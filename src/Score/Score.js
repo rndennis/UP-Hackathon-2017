@@ -10,7 +10,7 @@ import './Score.css';
 class Score extends Component {
   componentWillMount() {
     this.setState({isLoading: true});
-    auth.onAuthStateChanged((user) => {
+    const unsubscribe = auth.onAuthStateChanged((user) => {
       if (!user) {
         this
           .props
@@ -26,6 +26,10 @@ class Score extends Component {
           });
       }
     });
+    this.setState({unsubscribe});
+  }
+  componentWillUnmount() {
+    this.state.unsubscribe();
   }
   constructor(props) {
     super(props);
@@ -63,7 +67,7 @@ class Score extends Component {
         this.setState({accuracy: data.accuracy, message: data.message, isServiceRunning: false});
         const newScoresRef = db.ref().child('scores').push();
         newScoresRef.set({
-          teamName: (this.props.teamName) ? this.props.teamName : 'Anonymous',
+          teamName: (this.state.teamName) ? this.state.teamName : 'Anonymous',
           accuracy: (data.accuracy) ? data.accuracy : '0'
         });
       }).catch((error) => {

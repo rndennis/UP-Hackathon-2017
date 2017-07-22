@@ -7,7 +7,7 @@ import './Judge.css';
 class Judge extends Component {
   componentWillMount() {
     this.setState({isLoading: true});
-    auth.onAuthStateChanged((user) => {
+    const unsubscribe = auth.onAuthStateChanged((user) => {
       if (!user) {
         this
           .props
@@ -17,6 +17,10 @@ class Judge extends Component {
         this.setState({isLoading: false});
       }
     });
+    this.setState({unsubscribe});
+  }
+  componentWillUnmount() {
+    this.state.unsubscribe();
   }
   render() {
     return ((this.state.isLoading) ?

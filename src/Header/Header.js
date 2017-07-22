@@ -18,10 +18,13 @@ const LogoText = () => (
 );
 
 class Header extends Component {
+  componentWillUnmount() {
+    this.state.unsubscribe();
+  }
   constructor(props) {
     super(props);
     this.state = {};
-    auth.onAuthStateChanged((user) => {
+    const unsubscribe = auth.onAuthStateChanged((user) => {
       if (user) {
         const prefix = user.email.split('@')[0];
         db.ref(`/participants/${prefix}`)
@@ -32,6 +35,7 @@ class Header extends Component {
           });
       }
     });
+    this.setState({unsubscribe});
   }
   render() {
     return (
