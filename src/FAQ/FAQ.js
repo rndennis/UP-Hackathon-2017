@@ -30,6 +30,18 @@ class FAQ extends Component {
             </CardText>
           </Card>
         </div>
+        <div className="Question">
+          <Card>
+            <CardHeader
+              title={(<b>What data will we be testing against for the final submission?</b>)}
+              actAsExpander={true}
+              showExpandableButton={true}/>
+            <CardText expandable={true}>
+              We have chosen to withhold the actual date range you'll be testing against in an effort to accurately evaluate the performance of your model. However, we do want to emphasize that the date range for the final submission <b>is not</b> going to be 2015.
+              You will be given the final date range around 7:00 AM on Sunday so that you can prepare your data to submit.
+            </CardText>
+          </Card>
+        </div>
       </div>
     );
   }

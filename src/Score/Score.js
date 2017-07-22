@@ -66,12 +66,14 @@ class Score extends Component {
       fetch(request).then((response) => response.json()).then((data) => {
         this.setState({accuracy: data.accuracy, message: data.message, isServiceRunning: false});
         const newScoresRef = db.ref().child('scores').push();
-        newScoresRef.set({
-          teamName: (this.state.teamName) ? this.state.teamName : 'Anonymous',
-          accuracy: (data.accuracy) ? data.accuracy : '0'
-        });
+        if (data.accuracy) {
+          newScoresRef.set({
+            teamName: (this.state.teamName) ? this.state.teamName : 'Anonymous',
+            accuracy: data.accuracy
+          });
+        }
       }).catch((error) => {
-        this.setState({message: 'Unknown service error - please let someone know!', isServiceRunning: false});
+        this.setState({message: 'Unknown service error - please let someone know!', isServiceRunning: false, accuracy: void 0});
       });
     } else {
       this.setState({message: 'You need to select a file', isServiceRunning: false});
@@ -108,8 +110,9 @@ class Score extends Component {
             <CardText expandable={true}>
               Submit the CSV file that contains your predictions. If you forget what the
               format of the data is, refer to the <a href="/">problem description</a>. The dates in your submission should range
-              from 2014-01-01 to 2014-12-31. You should see an accuracy score upon a successful
-              submission. <b>If you run into an issue with the interface, talk to Renee or Andrew.</b>
+              from 2015-01-01 to 2015-12-31. You should see an accuracy score upon a successful
+              submission. We've found that if you're attempting to submit a CSV file that has been opened in Excel recently, you'll likely get
+              an error. To resolve it, just export to a CSV file from Excel and try to submit that. <b>If you run into an issue with the interface, talk to Renee or Andrew.</b>
             </CardText>
           </Card>
         </div>

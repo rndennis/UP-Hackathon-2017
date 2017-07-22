@@ -59,6 +59,9 @@ class Header extends Component {
             <Link className="NavigationButton" to="/score">
               <FlatButton label="Score"/>
             </Link>
+            <Link className="LeaderboardButton" to="/leaderboard">
+              <FlatButton label="Leaderboard"/>
+            </Link>
             <Link className="NavigationButton" to="/faq">
               <FlatButton label="FAQ"></FlatButton>
             </Link>

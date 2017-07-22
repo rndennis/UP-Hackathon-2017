@@ -10,6 +10,7 @@ import Problem from './Problem/Problem';
 import LoginPage from './LoginPage/LoginPage';
 import Score from './Score/Score';
 import Judge from './Judge/Judge';
+import Leaderboard from './Leaderboard/Leaderboard';
 import FAQ from './FAQ/FAQ';
 import Footer from './Footer/Footer';
 
@@ -46,8 +47,9 @@ class App extends Component {
             <Header updateTeamName={this.updateTeamName}/>
             <Route exact path="/" component={Problem}/>
             <Route path="/login" component={LoginPage}/>
+            <Route path="/score" component={Score}/>
             <Route path="/faq" component={FAQ}/>
-             <Route path="/score" component={Score}/>  
+            <Route path="/leaderboard" component={Leaderboard}/>
             {/* <Route path="/judge" component={Judge}/> */}
             <Footer/>
           </div>
