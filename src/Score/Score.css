@@ -41,3 +41,14 @@
   font-family: 'Cutive Mono', serif;
   padding: 1em;
 }
+
+.finalSumbission{
+  align-self: center;
+  color: #cc0000;
+}
+
+.finalHours {
+  align-self: center;
+  color: #cc0000;
+  margin-top: -0.5em;
+}

@@ -49,7 +49,7 @@ class Score extends Component {
   }
   handleSubmit() {
     this.setState({isServiceRunning: true});
-    const url = 'https://hackathon.chezgoose.com/hackathon/api/test';
+    const url = 'https://hackathon.chezgoose.com/hackathon/api/final';
     const content = this.state.fileText;
 
     const headers = new Headers();
@@ -65,11 +65,13 @@ class Score extends Component {
     if (content) {
       fetch(request).then((response) => response.json()).then((data) => {
         this.setState({accuracy: data.accuracy, message: data.message, isServiceRunning: false});
-        const newScoresRef = db.ref().child('scores').push();
+        const newScoresRef = db.ref().child('final').push();
+        const submissionTime = new Date();
         if (data.accuracy) {
           newScoresRef.set({
             teamName: (this.state.teamName) ? this.state.teamName : 'Anonymous',
-            accuracy: data.accuracy
+            accuracy: data.accuracy,
+            submissionTime: submissionTime.toString()
           });
         }
       }).catch((error) => {
@@ -101,29 +103,31 @@ class Score extends Component {
     return ((this.state.isLoading)
       ? <div className="Loader"><CircularProgress/></div>
       : <div className="Score">
-        <div className="Instructions">
-          <Card>
-            <CardHeader
-              title={(<b>Instructions for Testing</b>)}
-              actAsExpander={true}
-              showExpandableButton={true}/>
-            <CardText expandable={true}>
-              Submit the CSV file that contains your predictions. If you forget what the
-              format of the data is, refer to the <a href="/">problem description</a>. The dates in your submission should range
-              from 2015-01-01 to 2015-12-31. You should see an accuracy score upon a successful
-              submission. We've found that if you're attempting to submit a CSV file that has been opened in Excel recently, you'll likely get
-              an error. To resolve it, just export to a CSV file from Excel and try to submit that. <b>If you run into an issue with the interface, talk to Renee or Andrew.</b>
-            </CardText>
-          </Card>
-        </div>
-        <div className="Form">
-          <div className="FileUpload">
-            <FileUpload onSelectFile={this.handleSelectFile}/>
+          <h1 className="finalSumbission">DAWN OF THE FINAL SUBMISSION</h1>
+          <h3 className="finalHours">1.5 HOURS REMAIN</h3>
+          <div className="Instructions">
+            <Card>
+              <CardHeader
+                title={(<b>Instructions for Final Submission</b>)}
+                actAsExpander={true}
+                showExpandableButton={true}/>
+              <CardText expandable={true}>
+                Submit the CSV file that contains your predictions. If you forget what the
+                format of the data is, refer to the <a href="/">problem description</a>. The dates in your submission should range
+                from 2016-01-01 to 2017-05-31. You should see an accuracy score upon a successful
+                submission. We've found that if you're attempting to submit a CSV file that has been opened in Excel recently, you'll likely get
+                an error. To resolve it, just export to a CSV file from Excel and try to submit that. <b>If you run into an issue with the interface, talk to Renee or Andrew.</b>
+              </CardText>
+            </Card>
           </div>
-          {this.getSubmitButton()}
-        </div>
-        {this.getResult()}
-      </div>);
+          <div className="Form">
+            <div className="FileUpload">
+              <FileUpload onSelectFile={this.handleSelectFile}/>
+            </div>
+            {this.getSubmitButton()}
+          </div>
+          {this.getResult()}
+        </div>);
   }
 }
 
