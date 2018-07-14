@@ -1,0 +1,7 @@
+.Problems {
+  display: flex;
+  flex-direction: column;
+  align-content: center;
+  flex-grow: 1;
+  margin-top: 94px; /* AppBar is 64px */
+}

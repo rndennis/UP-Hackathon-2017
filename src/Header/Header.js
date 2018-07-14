@@ -1,66 +1,46 @@
 import React, { Component } from 'react';
 import { Link } from 'react-router-dom';
-import FlatButton from 'material-ui/FlatButton';
-import { Toolbar, ToolbarGroup, ToolbarSeparator } from 'material-ui/Toolbar';
-import { auth, db } from '../firebase';
+
+import { AppBar, Toolbar, Button, withStyles } from '@material-ui/core';
+
 import './Header.css';
 
-const toolbarStyle = {
-  backgroundColor: 'transparent'
+const styles = {
+  navButton: {
+    color: '#fff'
+  }
 };
 
-const LogoText = () => (
-  <ToolbarGroup>
-    <span className="Logo">{'<up-hackathon/>'}</span>
-  </ToolbarGroup>
-);
-
 class Header extends Component {
-  componentWillMount() {
-    const unsubscribe = auth.onAuthStateChanged(user => {
-      if (user) {
-        const prefix = user.email.split('@')[0];
-        db.ref(`/participants/${prefix}`)
-          .once('value')
-          .then(snapshot => {
-            this.setState({ teamName: snapshot.val() });
-            this.props.updateTeamName(snapshot.val());
-          });
-      }
-    });
-    this.setState({ unsubscribe });
-  }
-  componentWillUnmount() {
-    this.state.unsubscribe();
-  }
   constructor(props) {
     super(props);
-    this.state = {};
+    this.state = {
+      classes: props.classes
+    };
   }
   render() {
     return (
       <div className="Header">
-        <Toolbar style={toolbarStyle}>
-          <LogoText />
-          <ToolbarGroup lastChild={true}>
-            <div className="TeamName">
-              <FlatButton
-                label={this.state.teamName ? this.state.teamName : ' '}
-                disabled={true}
-              />
+        <AppBar>
+          <Toolbar className="HeaderToolbar">
+            <div className="Logo">
+              <Link to="/problems">{'<up-hackathon/>'}</Link>
             </div>
-            <ToolbarSeparator />
-            <Link className="NavigationButton" to="/">
-              <FlatButton label="Problem" />
-            </Link>
-            <Link className="NavigationButton" to="/faq">
-              <FlatButton label="FAQ" />
-            </Link>
-          </ToolbarGroup>
-        </Toolbar>
+            <div className="Navigation">
+              <Link to="/problems">
+                <Button className={this.state.classes.navButton}>
+                  Problems
+                </Button>
+              </Link>
+              <Link to="/faq">
+                <Button className={this.state.classes.navButton}>FAQ</Button>
+              </Link>
+            </div>
+          </Toolbar>
+        </AppBar>
       </div>
     );
   }
 }
 
-export default Header;
+export default withStyles(styles)(Header);

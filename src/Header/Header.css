@@ -1,16 +1,14 @@
-.Header {
-  border-bottom: 1px solid #ddd;
-}
-
-.NavigationButton:first-of-type {
-  margin-left: 1em;
-}
-
-.NavigationButton {
-  margin-right: 0.5em;
-}
-
 .Logo {
   font-family: 'Cutive Mono', serif;
   font-size: 1.5em;
+}
+
+.Logo a {
+  color: white;
+  text-decoration: none;
+}
+
+.HeaderToolbar {
+  display: flex;
+  justify-content: space-between;
 }
