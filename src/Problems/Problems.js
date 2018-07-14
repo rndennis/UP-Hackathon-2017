@@ -2,6 +2,10 @@ import React, { Component } from 'react';
 
 import { Paper, Tabs, Tab } from '@material-ui/core';
 
+import { AssistantProblem } from './AssistantProblem';
+import { PricingProblem } from './PricingProblem';
+import { DefectProblem } from './DefectProblem';
+
 import './Problems.css';
 
 class Problems extends Component {
@@ -31,11 +35,9 @@ class Problems extends Component {
             <Tab value="pricing" label="Cross-Rail Pricing" />
             <Tab value="defect" label="Defect Classification" />
           </Tabs>
-          <p>
-            {this.state.activeTab === 'assistant' ? 'Customer Assistant' : ''}
-            {this.state.activeTab === 'pricing' ? 'Cross-Rail Pricing' : ''}
-            {this.state.activeTab === 'defect' ? 'Defect Classification' : ''}
-          </p>
+          {this.state.activeTab === 'assistant' ? <AssistantProblem /> : ''}
+          {this.state.activeTab === 'pricing' ? <PricingProblem /> : ''}
+          {this.state.activeTab === 'defect' ? <DefectProblem /> : ''}
         </Paper>
       </div>
     );
