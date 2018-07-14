@@ -1,8 +1,8 @@
-import React, {Component} from 'react'
-import {Link} from 'react-router-dom';
+import React, { Component } from 'react';
+import { Link } from 'react-router-dom';
 import FlatButton from 'material-ui/FlatButton';
-import {Toolbar, ToolbarGroup, ToolbarSeparator} from 'material-ui/Toolbar';
-import {auth, db} from '../firebase';
+import { Toolbar, ToolbarGroup, ToolbarSeparator } from 'material-ui/Toolbar';
+import { auth, db } from '../firebase';
 import './Header.css';
 
 const toolbarStyle = {
@@ -11,26 +11,24 @@ const toolbarStyle = {
 
 const LogoText = () => (
   <ToolbarGroup>
-    <span className="Logo">
-      {'<up-hackathon/>'}
-    </span>
+    <span className="Logo">{'<up-hackathon/>'}</span>
   </ToolbarGroup>
 );
 
 class Header extends Component {
   componentWillMount() {
-    const unsubscribe = auth.onAuthStateChanged((user) => {
+    const unsubscribe = auth.onAuthStateChanged(user => {
       if (user) {
         const prefix = user.email.split('@')[0];
         db.ref(`/participants/${prefix}`)
           .once('value')
-          .then((snapshot) => {
-            this.setState({teamName: snapshot.val()});
+          .then(snapshot => {
+            this.setState({ teamName: snapshot.val() });
             this.props.updateTeamName(snapshot.val());
           });
       }
     });
-    this.setState({unsubscribe});
+    this.setState({ unsubscribe });
   }
   componentWillUnmount() {
     this.state.unsubscribe();
@@ -43,31 +41,21 @@ class Header extends Component {
     return (
       <div className="Header">
         <Toolbar style={toolbarStyle}>
-          <LogoText/>
+          <LogoText />
           <ToolbarGroup lastChild={true}>
             <div className="TeamName">
               <FlatButton
-                label={(this.state.teamName)
-                ? (this.state.teamName)
-                : ' '}
-                disabled={true}/>
+                label={this.state.teamName ? this.state.teamName : ' '}
+                disabled={true}
+              />
             </div>
-            <ToolbarSeparator/>
+            <ToolbarSeparator />
             <Link className="NavigationButton" to="/">
-              <FlatButton label="Problem"/>
-            </Link>
-            <Link className="NavigationButton" to="/score">
-              <FlatButton label="Score"/>
-            </Link>
-            <Link className="LeaderboardButton" to="/leaderboard">
-              <FlatButton label="Leaderboard"/>
+              <FlatButton label="Problem" />
             </Link>
             <Link className="NavigationButton" to="/faq">
-              <FlatButton label="FAQ"></FlatButton>
+              <FlatButton label="FAQ" />
             </Link>
-            {/* <Link className="NavigationButton" to="/judge">
-              <FlatButton label="Judge"/>
-            </Link> */}
           </ToolbarGroup>
         </Toolbar>
       </div>
