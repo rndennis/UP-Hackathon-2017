@@ -1,6 +1,5 @@
-import React, {Component} from 'react';
-import {BrowserRouter, Route} from 'react-router-dom';
-import injectTapEventPlugin from 'react-tap-event-plugin';
+import React, { Component } from 'react';
+import { BrowserRouter, Route } from 'react-router-dom';
 
 import MuiThemeProvider from 'material-ui/styles/MuiThemeProvider';
 import getMuiTheme from 'material-ui/styles/getMuiTheme';
@@ -15,8 +14,6 @@ import FAQ from './FAQ/FAQ';
 import Footer from './Footer/Footer';
 
 import './App.css';
-
-injectTapEventPlugin();
 
 const theme = getMuiTheme({
   appBar: {
@@ -37,21 +34,21 @@ class App extends Component {
     this.updateTeamName = this.updateTeamName.bind(this);
   }
   updateTeamName(teamName) {
-    this.setState({teamName});
+    this.setState({ teamName });
   }
   render() {
     return (
       <MuiThemeProvider muiTheme={theme}>
         <BrowserRouter>
           <div className="App">
-            <Header updateTeamName={this.updateTeamName}/>
-            <Route exact path="/" component={Problem}/>
-            <Route path="/login" component={LoginPage}/>
-            <Route path="/score" component={Score}/>
-            <Route path="/faq" component={FAQ}/>
-            <Route path="/leaderboard" component={Leaderboard}/>
+            <Header updateTeamName={this.updateTeamName} />
+            <Route exact path="/" component={Problem} />
+            <Route path="/login" component={LoginPage} />
+            <Route path="/score" component={Score} />
+            <Route path="/faq" component={FAQ} />
+            <Route path="/leaderboard" component={Leaderboard} />
             {/* <Route path="/judge" component={Judge}/> */}
-            <Footer/>
+            <Footer />
           </div>
         </BrowserRouter>
       </MuiThemeProvider>
