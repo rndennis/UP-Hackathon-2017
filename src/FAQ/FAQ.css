@@ -2,15 +2,7 @@
   display: flex;
   flex-direction: column;
   align-content: center;
-  flex: 1;
-}
-
-.Question {
-  width: 80%;
-  align-self: center;
-  margin-top: 1em;
-}
-
-CardHeader {
-  font-weight: 500;
+  flex-grow: 1;
+  width: 100%;
+  margin-top: 94px; /* AppBar is 64px */
 }

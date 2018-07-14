@@ -1,8 +1,7 @@
 import React, { Component } from 'react';
 import { BrowserRouter, Route, Redirect, Switch } from 'react-router-dom';
 
-import MuiThemeProvider from 'material-ui/styles/MuiThemeProvider';
-import getMuiTheme from 'material-ui/styles/getMuiTheme';
+import { MuiThemeProvider, createMuiTheme } from '@material-ui/core';
 
 import Header from './Header/Header';
 import Problems from './Problems/Problems';
@@ -11,30 +10,20 @@ import Footer from './Footer/Footer';
 
 import './App.css';
 
-const theme = getMuiTheme({
-  appBar: {
-    color: 'transparent',
-    textColor: '#555'
-  },
-  toolbar: {
-    color: 'transparent'
+const theme = createMuiTheme({
+  palette: {
+    primary: { main: '#344955' },
+    secondary: { main: '#FFCA28' }
   }
 });
 
 class App extends Component {
   constructor(props) {
     super(props);
-    this.state = {
-      teamName: ''
-    };
-    this.updateTeamName = this.updateTeamName.bind(this);
-  }
-  updateTeamName(teamName) {
-    this.setState({ teamName });
   }
   render() {
     return (
-      <MuiThemeProvider muiTheme={theme}>
+      <MuiThemeProvider theme={theme}>
         <BrowserRouter>
           <div className="App">
             <Header />
