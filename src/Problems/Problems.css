@@ -10,6 +10,7 @@
   text-align: center;
 }
 
-.LifecycleImage {
+.LifecycleImage,
+.ConversationImage {
   width: 50%;
 }

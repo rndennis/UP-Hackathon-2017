@@ -1,6 +1,7 @@
 import React, { Component } from 'react';
 
 import lifecycle from './lifecycle.png';
+import conversation from './conversation.png';
 
 export class AssistantProblem extends Component {
   render() {
@@ -21,6 +22,7 @@ export class AssistantProblem extends Component {
           intelligent assistant, whether it be text-based, voice-based or both,
           that could help make working with us as seamless as possible.
         </p>
+
         <p>
           Biggest benefits can be seen with the smaller customers that don't
           ship an immense amount of things with us, or that don't have large
@@ -28,6 +30,13 @@ export class AssistantProblem extends Component {
           work all day in heavily refrigerated warehouses that can't take off
           their gloves for long periods of time to navigate our site on a
           computer.
+        </p>
+        <p className="ImageWrapper">
+          <img
+            className="ConversationImage"
+            src={conversation}
+            alt="Sample conversation"
+          />
         </p>
         <div className="ContentHeader">Background</div>
         <p>
@@ -74,8 +83,9 @@ export class AssistantProblem extends Component {
         </p>
         <div className="ContentHeader">Data</div>
         <p>
-          We don't have specific data sets for this problem. We would like to
-          give you insight into what{' '}
+          We don't have specific data sets for this problem. However, we do want
+          to give you some examples of common information associated with
+          cars/equipment, exceptions, and service issues.
         </p>
       </div>
     );
