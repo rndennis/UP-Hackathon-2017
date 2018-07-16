@@ -12,6 +12,7 @@ export class PricingProblem extends Component {
   render() {
     return (
       <div>
+<<<<<<< HEAD
         <div className="ContentHeader">Description</div>
         <p>
           When is comes to travel, customers are accustomed to being able to
@@ -23,6 +24,9 @@ export class PricingProblem extends Component {
         </p>
         <div className="ContentHeader">Background</div>
         <div className="ContentHeader">Data</div>
+=======
+        <h3>Problem Description</h3>
+>>>>>>> 07c40e7469bfe1d59519cc28ad6feb331d539e24
         <p>
           You are provided with an <a href="bleh">excel sheet</a> of example
           shipping quotes from Union Pacific and the BNSF. The main purpose of
@@ -30,6 +34,7 @@ export class PricingProblem extends Component {
           quote for the customer. There also might be some other cool things you
           could do with it, feel free to be creative!
         </p>
+<<<<<<< HEAD
         <p>
           <Table>
             <TableHead>
@@ -87,6 +92,17 @@ export class PricingProblem extends Component {
               </TableRow>
             </TableBody>
           </Table>
+=======
+        <h3>Requirements</h3>
+        <p>
+          ...
+        </p>
+        <h3>Data Description</h3>
+        <p>
+          You are provided with an <a href="bleh">excel sheet</a> of example shipping quotes from the Union Pacific and the BNSF railroads. 
+          The main purpose of this data is to show the major pieces of information that compose a quote for the customer. 
+          There also might be some other cool things you could do with it, feel free to be creative!
+>>>>>>> 07c40e7469bfe1d59519cc28ad6feb331d539e24
         </p>
 
         <ul className="UnstyledList">
@@ -145,6 +161,10 @@ export class PricingProblem extends Component {
             </small>
           </li>
         </ul>
+<<<<<<< HEAD
+=======
+        <p>* provided by the customer</p>
+>>>>>>> 07c40e7469bfe1d59519cc28ad6feb331d539e24
       </div>
     );
   }
