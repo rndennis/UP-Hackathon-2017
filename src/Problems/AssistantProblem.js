@@ -3,6 +3,16 @@ import React, { Component } from 'react';
 import lifecycle from './lifecycle.png';
 import conversation from './conversation.png';
 
+const mockEquipment = {
+  id: 'MTKG45321',
+  empty: false,
+  commodity: '',
+  carType: '',
+  completedEvents: [],
+  scheduledEvents: [],
+  serviceIssues: []
+};
+
 export class AssistantProblem extends Component {
   render() {
     return (
@@ -24,8 +34,8 @@ export class AssistantProblem extends Component {
         </p>
 
         <p>
-          Biggest benefits can be seen with the smaller customers that don't
-          ship an immense amount of things with us, or that don't have large
+          Benefits are more obvious with the smaller customers that don't ship
+          an immense amount of things with us, or that don't have large
           technology departments, or even something as specific as customers who
           work all day in heavily refrigerated warehouses that can't take off
           their gloves for long periods of time to navigate our site on a
@@ -87,6 +97,12 @@ export class AssistantProblem extends Component {
           to give you some examples of common information associated with
           cars/equipment, exceptions, and service issues.
         </p>
+        <div className="CodeBlock">
+          <div className="CodeBlockTitle">Mock Equipment</div>
+          <pre className="CodeBlockCode">
+            {JSON.stringify(mockEquipment, null, 2)}
+          </pre>
+        </div>
       </div>
     );
   }
