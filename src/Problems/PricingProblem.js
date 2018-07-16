@@ -9,18 +9,21 @@ export class PricingProblem extends Component {
   render() {
     return (
       <div>
-        <p>Problem Description</p>
+        <h3>Problem Description</h3>
         <p>
           When is comes to travel, customers are accustomed to being able to quickly and easily get prices for multiple options. 
           This allows the customer to make the best travel plans for them, weather that's the cheapest, fastest, or most convenient option. 
           Sites like Kayak, Orbitz, and Expedia are great examples of this type of service. 
           However when it comes to 
         </p>
-        <p>Requirements</p>
+        <h3>Requirements</h3>
+        <p>
+          ...
+        </p>
         <h3>Data Description</h3>
         <p>
-          You are provided with an <a href="bleh">excel sheet</a> of example shipping quotes from Union Pacific and the BNSF.
-          The main purpose of this data is to show the major pieces of information that compose a quote for the customer.
+          You are provided with an <a href="bleh">excel sheet</a> of example shipping quotes from the Union Pacific and the BNSF railroads. 
+          The main purpose of this data is to show the major pieces of information that compose a quote for the customer. 
           There also might be some other cool things you could do with it, feel free to be creative!
         </p>
         <Table>
@@ -89,7 +92,7 @@ export class PricingProblem extends Component {
           <li>Transit Time: Estimated number of ____ the shipment will take.</li>
           <li>Consistency: How _____</li>
         </ul>
-        <p>* customer provided</p>
+        <p>* provided by the customer</p>
       </div>
       );
     }
