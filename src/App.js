@@ -5,6 +5,7 @@ import { MuiThemeProvider, createMuiTheme } from '@material-ui/core';
 
 import Header from './Header/Header';
 import Problems from './Problems/Problems';
+import Schedule from './Schedule/Schedule';
 import FAQ from './FAQ/FAQ';
 import Footer from './Footer/Footer';
 
@@ -26,6 +27,7 @@ class App extends Component {
             <Header />
             <Switch>
               <Route path="/problems/:problem" component={Problems} />
+              <Route path="/schedule" component={Schedule} />
               <Route path="/faq" component={FAQ} />
               <Redirect exact from="/problems" to="problems/assistant" />
               <Redirect exact from="/" to="/problems/assistant" />

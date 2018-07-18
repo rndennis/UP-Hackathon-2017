@@ -5,6 +5,17 @@
   min-height: 100vh;
 }
 
+.Problems,
+.FAQ,
+.Schedule {
+  display: flex;
+  flex-direction: column;
+  align-content: center;
+  flex-grow: 1;
+  width: 100%;
+  margin-top: 94px; /* AppBar is 64px */
+}
+
 .ContentHeader {
   color: #263238;
   font-weight: 300;
@@ -22,16 +33,11 @@ li,
   color: #263238;
   font-weight: 300;
   line-height: 1.75;
-  /* font-size: 1.25em; */
 }
 
 p,
 .UnstyledList {
   padding: 0 24px;
-}
-
-.CodeBlock {
-  padding-left: 24px;
 }
 
 p a,
@@ -43,6 +49,10 @@ ul a {
 
 .UnstyledList {
   list-style-type: none;
+}
+
+.CodeBlock {
+  padding-left: 24px;
 }
 
 .CodeBlockCode {

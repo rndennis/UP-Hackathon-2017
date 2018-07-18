@@ -1,7 +1,13 @@
 import React, { Component } from 'react';
 import { Link } from 'react-router-dom';
 
-import { AppBar, Toolbar, Button, withStyles } from '@material-ui/core';
+import {
+  AppBar,
+  Toolbar,
+  Button,
+  IconButton,
+  withStyles
+} from '@material-ui/core';
 
 import './Header.css';
 
@@ -32,9 +38,19 @@ class Header extends Component {
                   Problems
                 </Button>
               </Link>
+              <Link to="/schedule">
+                <Button className={this.state.classes.navButton}>
+                  Schedule
+                </Button>
+              </Link>
               <Link to="/faq">
                 <Button className={this.state.classes.navButton}>FAQ</Button>
               </Link>
+              <a target="_blank" href="https://discordapp.com/invite/dBAzraV">
+                <IconButton>
+                  <i class="fab fa-discord" />
+                </IconButton>
+              </a>
             </div>
           </Toolbar>
         </AppBar>
