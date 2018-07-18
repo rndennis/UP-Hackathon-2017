@@ -26,9 +26,12 @@ li,
 }
 
 p,
-.CodeBlock,
 .UnstyledList {
   padding: 0 24px;
+}
+
+.CodeBlock {
+  padding-left: 24px;
 }
 
 p a,

@@ -13,4 +13,18 @@
 .LifecycleImage,
 .ConversationImage {
   width: 50%;
+  min-width: 400px;
+}
+
+.Label {
+  font-weight: 400;
+}
+
+.Label:after {
+  content: ': ';
+}
+
+.FlexContainer {
+  display: flex;
+  flex-direction: row;
 }
