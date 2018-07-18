@@ -46,9 +46,9 @@ class Header extends Component {
               <Link to="/faq">
                 <Button className={this.state.classes.navButton}>FAQ</Button>
               </Link>
-              <a target="_blank" href="https://discordapp.com/invite/dBAzraV">
+              <a href="https://discordapp.com/invite/dBAzraV">
                 <IconButton>
-                  <i class="fab fa-discord" />
+                  <i className={['fab', 'fa-discord'].join(' ')} />
                 </IconButton>
               </a>
             </div>
