@@ -29,7 +29,8 @@
 p,
 li,
 .UnstyledList,
-.CodeBlock {
+.CodeBlock,
+.Schedule {
   color: #263238;
   font-weight: 300;
   line-height: 1.75;
@@ -38,6 +39,10 @@ li,
 p,
 .UnstyledList {
   padding: 0 24px;
+}
+
+.ScheduleContent {
+  padding: 24px;
 }
 
 p a,

@@ -1,0 +1,13 @@
+.ScheduleRow {
+  display: flex;
+  flex-wrap: wrap;
+}
+
+.ScheduleRow div:first-child {
+  width: 10em;
+  font-weight: 400;
+}
+
+.ScheduleRow div:last-child {
+  width: 17em;
+}
