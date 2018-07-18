@@ -29,8 +29,8 @@ class App extends Component {
               <Route path="/problems/:problem" component={Problems} />
               <Route path="/schedule" component={Schedule} />
               <Route path="/faq" component={FAQ} />
-              <Redirect exact from="/problems" to="problems/assistant" />
-              <Redirect exact from="/" to="/problems/assistant" />
+              <Redirect exact from="/problems" to="problems/pricing" />
+              <Redirect exact from="/" to="/problems/pricing" />
             </Switch>
             <Footer />
           </div>
