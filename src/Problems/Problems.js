@@ -31,8 +31,8 @@ class Problems extends Component {
       <div className="Problems">
         <Paper>
           <Tabs value={this.state.activeTab} onChange={this.handleChangeTab}>
-            <Tab value="assistant" label="Customer Assistant" />
             <Tab value="pricing" label="Cross-Rail Pricing" />
+            <Tab value="assistant" label="Customer Assistant" />
             <Tab value="defect" label="Defect Classification" />
           </Tabs>
           {this.state.activeTab === 'assistant' ? <AssistantProblem /> : ''}
