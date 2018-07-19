@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
 import { BrowserRouter, Route, Redirect, Switch } from 'react-router-dom';
 
-import { MuiThemeProvider, createMuiTheme } from '@material-ui/core';
+import { Paper, MuiThemeProvider, createMuiTheme } from '@material-ui/core';
 
 import Header from './Header/Header';
 import Problems from './Problems/Problems';
@@ -25,13 +25,15 @@ class App extends Component {
         <BrowserRouter>
           <div className="App">
             <Header />
-            <Switch>
-              <Route path="/problems/:problem" component={Problems} />
-              <Route path="/schedule" component={Schedule} />
-              <Route path="/faq" component={FAQ} />
-              <Redirect exact from="/problems" to="problems/pricing" />
-              <Redirect exact from="/" to="/problems/pricing" />
-            </Switch>
+            <Paper className="AppContent">
+              <Switch>
+                <Route path="/problems/:problem" component={Problems} />
+                <Route path="/schedule" component={Schedule} />
+                <Route path="/faq" component={FAQ} />
+                <Redirect exact from="/problems" to="problems/pricing" />
+                <Redirect exact from="/" to="/problems/pricing" />
+              </Switch>
+            </Paper>
             <Footer />
           </div>
         </BrowserRouter>

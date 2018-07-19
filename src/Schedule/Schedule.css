@@ -1,13 +1,12 @@
-.ScheduleRow {
-  display: flex;
-  flex-wrap: wrap;
+.Schedule {
+  font-size: 1.25em;
+  text-align: center;
 }
 
-.ScheduleRow div:first-child {
-  width: 10em;
+.Time {
   font-weight: 400;
 }
 
-.ScheduleRow div:last-child {
-  width: 17em;
+.Event {
+  margin-left: 1em;
 }

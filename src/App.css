@@ -5,9 +5,7 @@
   min-height: 100vh;
 }
 
-.Problems,
-.FAQ,
-.Schedule {
+.AppContent {
   color: #263238;
   font-weight: 300;
   line-height: 1.75;

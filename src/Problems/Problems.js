@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
 
-import { Paper, Tabs, Tab } from '@material-ui/core';
+import { Tabs, Tab } from '@material-ui/core';
 
 import { AssistantProblem } from './AssistantProblem';
 import { PricingProblem } from './PricingProblem';
@@ -29,16 +29,14 @@ class Problems extends Component {
   render() {
     return (
       <div className="Problems">
-        <Paper>
-          <Tabs value={this.state.activeTab} onChange={this.handleChangeTab}>
-            <Tab value="pricing" label="Cross-Rail Pricing" />
-            <Tab value="assistant" label="Customer Assistant" />
-            <Tab value="defect" label="Defect Classification" />
-          </Tabs>
-          {this.state.activeTab === 'assistant' ? <AssistantProblem /> : ''}
-          {this.state.activeTab === 'pricing' ? <PricingProblem /> : ''}
-          {this.state.activeTab === 'defect' ? <DefectProblem /> : ''}
-        </Paper>
+        <Tabs value={this.state.activeTab} onChange={this.handleChangeTab}>
+          <Tab value="pricing" label="Cross-Rail Pricing" />
+          <Tab value="assistant" label="Customer Assistant" />
+          <Tab value="defect" label="Defect Classification" />
+        </Tabs>
+        {this.state.activeTab === 'assistant' ? <AssistantProblem /> : ''}
+        {this.state.activeTab === 'pricing' ? <PricingProblem /> : ''}
+        {this.state.activeTab === 'defect' ? <DefectProblem /> : ''}
       </div>
     );
   }
