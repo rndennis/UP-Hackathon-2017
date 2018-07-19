@@ -3,6 +3,8 @@ import React, { Component } from 'react';
 import lifecycle from './lifecycle.png';
 import conversation from './conversation.png';
 
+import CodeBlock from '../CodeBlock/CodeBlock';
+
 const mockEquipment = {
   id: 'SHMC1234',
   empty: false,
@@ -36,6 +38,9 @@ const mockNotification = {
 };
 
 export class AssistantProblem extends Component {
+  handleClick() {
+    console.log('hello world');
+  }
   render() {
     return (
       <div>
@@ -130,25 +135,10 @@ export class AssistantProblem extends Component {
           information associated with cars/equipment, exceptions, service
           issues, etc.
         </p>
-        <div className="FlexContainer">
-          <div className="CodeBlock">
-            <div className="CodeBlockTitle">Mock Car/Equipment</div>
-            <pre className="CodeBlockCode">
-              {JSON.stringify(mockEquipment, null, 2)}
-            </pre>
-          </div>
-          <div className="CodeBlock">
-            <div className="CodeBlockTitle">Mock Service Issue</div>
-            <pre className="CodeBlockCode">
-              {JSON.stringify(mockServiceIssue, null, 2)}
-            </pre>
-          </div>
-          <div className="CodeBlock">
-            <div className="CodeBlockTitle">Mock Notification</div>
-            <pre className="CodeBlockCode">
-              {JSON.stringify(mockNotification, null, 2)}
-            </pre>
-          </div>
+        <div>
+          <CodeBlock title="Mock Car/Equipment" code={mockEquipment} />
+          <CodeBlock title="Mock Service Issue" code={mockServiceIssue} />
+          <CodeBlock title="Mock Notification" code={mockNotification} />
         </div>
       </div>
     );

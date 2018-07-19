@@ -1,0 +1,27 @@
+.Block {
+  padding: 0 24px;
+}
+
+.Header {
+  background-color: #37474f;
+  padding: 0.5em 1em;
+  color: #fff;
+  font-weight: 400;
+  border-top-right-radius: 4px;
+  border-top-left-radius: 4px;
+}
+
+.Code {
+  background-color: #263238;
+  color: #fff;
+  font-size: 1.25em;
+  border-bottom-right-radius: 4px;
+  border-bottom-left-radius: 4px;
+  padding: 1em;
+  margin-top: 0;
+  transition: height 5s;
+}
+
+.Spacer {
+  height: 24px;
+}

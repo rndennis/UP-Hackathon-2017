@@ -95,10 +95,10 @@ export class DefectProblem extends Component {
           </Table>
         </div>
         <p>
-          <span class="ImageInfo">
+          <span className="ImageInfo">
             Average Size of Image: <b>300x150px</b>
           </span>
-          <span class="ImageInfo">
+          <span className="ImageInfo">
             Total Size of Folder: <b>1.4GB</b>
           </span>
         </p>
@@ -135,10 +135,10 @@ export class DefectProblem extends Component {
           </Table>
         </div>
         <p>
-          <span class="ImageInfo">
+          <span className="ImageInfo">
             Average Size of Image: <b>300x150px</b>
           </span>
-          <span class="ImageInfo">
+          <span className="ImageInfo">
             Total Size of Folder: <b>1.4GB</b>
           </span>
         </p>
@@ -167,10 +167,10 @@ export class DefectProblem extends Component {
           </Table>
         </div>
         <p>
-          <span class="ImageInfo">
+          <span className="ImageInfo">
             Average Size of Image: <b>300x150px</b>
           </span>
-          <span class="ImageInfo">
+          <span className="ImageInfo">
             Total Size of Folder: <b>1.4GB</b>
           </span>
         </p>

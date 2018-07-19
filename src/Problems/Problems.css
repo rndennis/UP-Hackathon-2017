@@ -16,11 +16,6 @@
   content: ': ';
 }
 
-.FlexContainer {
-  display: flex;
-  flex-direction: row;
-}
-
 .DataButtons {
   text-align: center;
 }
