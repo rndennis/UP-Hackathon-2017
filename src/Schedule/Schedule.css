@@ -1,12 +1,32 @@
 .Schedule {
-  font-size: 1.25em;
   text-align: center;
+  display: flex;
+  flex-direction: row;
+  line-height: 2.5em;
+  padding: 24px;
+}
+
+.Event {
+  display: flex;
+  justify-content: center;
 }
 
 .Time {
   font-weight: 400;
+  width: 5em;
+  text-align: right;
 }
 
-.Event {
+.Description {
   margin-left: 1em;
+  width: 20em;
+  text-align: left;
+}
+
+.Meme img {
+  max-width: 350px;
+}
+
+.Meme {
+  flex-grow: 1;
 }
