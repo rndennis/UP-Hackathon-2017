@@ -24,6 +24,13 @@ class Header extends Component {
       classes: props.classes
     };
   }
+
+  openInNewTab(url) {
+    return () => {
+      window.open(url, '_blank');
+    };
+  }
+
   render() {
     return (
       <div className="Header">
@@ -46,11 +53,13 @@ class Header extends Component {
               <Link to="/faq">
                 <Button className={this.state.classes.navButton}>FAQ</Button>
               </Link>
-              <a href="https://discordapp.com/invite/dBAzraV">
-                <IconButton>
-                  <i className={['fab', 'fa-discord'].join(' ')} />
-                </IconButton>
-              </a>
+              <IconButton
+                onClick={this.openInNewTab(
+                  'https://discordapp.com/invite/dBAzraV'
+                )}
+              >
+                <i className={['fab', 'fa-discord'].join(' ')} />
+              </IconButton>
             </div>
           </Toolbar>
         </AppBar>

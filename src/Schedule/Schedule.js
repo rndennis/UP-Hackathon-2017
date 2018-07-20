@@ -59,7 +59,7 @@ export default class Schedule extends Component {
           </div>
         </div>
         <div className="Meme">
-          <img src={this.getRandomMeme()} />
+          <img src={this.getRandomMeme()} alt="Meme zone" />
         </div>
       </div>
     );
