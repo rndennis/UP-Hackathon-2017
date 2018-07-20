@@ -38,8 +38,8 @@ export class DefectProblem extends Component {
           parts of the train for inspections.
         </p>
         <p>
-          For this problem you will be looking at developing algorithms for this system to find
-          increasingly difficult defects in three different train car parts:
+          For this problem you will be developing 3 increasingly difficult algorithms 
+          for this system to find defects in 3 different train car parts:
         </p>
         <ol>
           <li>Truck Springs</li>
@@ -57,7 +57,7 @@ export class DefectProblem extends Component {
           <b>Truck Springs</b>: Level 1
         </p>
         <p>
-          The easiest of the three defects, Truck Spring, presents a more classical computer vision problem, while still
+          The least difficult of the 3 defects, Truck Spring, presents a more classical computer vision problem, while still
           being constrained by a common industry shortcoming. The classes are balanced and there is enough data to work with, 
           but it would still be better if you had more. The defects themselves are very clear, showing up as cracks in the springs or compressed rings. 
           It is quite easy to tell when a spring is <i>broken</i> vs. <i>normal</i>. This solid distinction presents a clear feature to work towards identifying, 
@@ -72,10 +72,12 @@ export class DefectProblem extends Component {
         </p>
         <p>
           Unlike Truck Spring, Brake Shoe presents some added difficulties that move it away from the classical classification category.
-          First the set is unbalanced. About 1 in 5 Brake Shoes are considered <i>thin</i>. The second challenge is that drawing the line 
-          between what is a normal Brake Shoe and what is a Defective Brake Shoe is not clear. The feature that defines the defect is the width
+          First the set is unbalanced. About 1 in 5 Brake Shoes in the data set have been labeled <i>thin</i>. The second challenge is that drawing the line 
+          between what is a <i>normal</i> Brake Shoe and what is a Defective Brake Shoe is not clear. The feature that defines the defect is the width
           of the pad (red box area in the images below). <i>Thin</i> Brake Shoes are considered a defect when they are <i>REALLY thin</i> or gone completely.
           What is considered <i>REALLY thin</i> is open to interpretation and thus a source of bias. So be careful of fully trusting the given labels of this dataset.
+          The third challenge with this defect is that the images you are given have more "noise". By "noise" we mean that only a fraction of the pixels in each image
+          are relevant for classifying the image. 
         </p>
         <p className="ImageWrapper">
           <img src={normalbrakeshoe} alt="Normal Brake Shoe" height="400px" />
@@ -86,29 +88,30 @@ export class DefectProblem extends Component {
         </p>
         <p>
           If you are able to reach this object congratulations! Now prepare to REALLY struggle. For Wheels it doesn't even make sense to talk
-          in terms of "balanced datasets". There are 3 <i>defective wheel</i> images, one of which (<i>email_wheel.png</i>) is not even in the same format as the rest of the images, 
-          and 10-30k <i>wheel</i> images. An important distinction between the other objects and this one is that there is no guarantee of labels.
+          in terms of "balanced datasets". There are only 3 <i>defective wheel</i> images, one of which (<i>wheel_emailed_defect.png</i>) is not even in the same format 
+          as the rest of the images, and 10-30k <i>wheel</i> images. An important distinction between the other objects and this one is that there is no 
+          guarantee of labels.
           There are the 3 confirmed defects and then the rest are essentially unlabeled. However due to the low rate of this type of defect it's safe to assume that it is 
           very unlikely that any of the wheels in <i>all_wheels</i> is an image of a defect. But if you are unsure please ask! Focus on coming up with a solution that
           does not rely on having a decent, or any, number of defect examples. This is a very important type of problem, especially here at the railroad.
         </p>
         <br />
         <p>
-          Due to the intense processing requirements of this problem, there will be Google Cloud VMs to use with a fast CPU, 
+          Due to the potentially intense processing requirements of this problem, there will be Google Cloud VMs to use with a fast CPU, 
           a good amount of RAM, and a K80 GPU. There are 8 available. So depending on the number of teams, either each team will have a box to work with or slots of time 
           will be setup for teams to use them. Please pay attention in the <i>#defects</i> channel on the Discord server for updates. 
           These will become available sometime after the hackathon begins.
         </p>
         <p>
           To use one of these boxes, please talk to Andrew or Dan or post in the <i>#defects</i> channel. 
-          You will be given three piece of information: a username, password, and ssh key. 
+          You will be given 3 pieces of information: a username, password, and ssh key. 
           To ssh into the box on Windows we recommend you use PuTTY. On Mac or Linux you should be able to use the standard ssh cmd
-          tool. If you have any issues logging in, or are unfamiliar with how to use ssh please ask for help!
+          tool. If you have any issues logging in, installing things, or are unfamiliar with how to use ssh please ask for help!
         </p>
         <div className="ContentHeader">Data</div>
         <p>
           The data you will be working with can be found at the links below in
-          four different .zip files:
+          4 different .zip files:
         </p>
         <div className="DataButtons">
           <a href="https://storage.googleapis.com/hack-bucket/TruckSpring.zip">
@@ -133,7 +136,7 @@ export class DefectProblem extends Component {
           </a>
         </div>
         <p>
-          For <b>Truck Springs</b> the zip contains three sub folders:
+          For <b>Truck Springs</b> the zip contains 3 sub folders:
           <i>training</i>, <i>testing</i>, and <i>validation</i>. Each of those
           contains images of Truck Springs sorted into <i>normal</i> and
           <i>broken</i> folders based on their label. All of the images are
@@ -177,7 +180,7 @@ export class DefectProblem extends Component {
           </span>
         </p>
         <p>
-          For <b>Brake Shoes</b> the zip contains two sub folders:
+          For <b>Brake Shoes</b> the zip contains 2 sub folders:
           <i>training</i> and <i>testing</i>. Each of those contains images of
           Brake Shoes sorted into <i>normal</i> and <i>thin</i> folders based on
           their labels. Some of the images are equalized. The distribution
@@ -217,11 +220,11 @@ export class DefectProblem extends Component {
           </span>
         </p>
         <p>
-          For <b>Wheels</b>, the dataset has been split up into two zips which contain 
-          two sub folders: <i>all_wheels</i> and <i>defect_wheels</i>. This was done due to the
+          For <b>Wheels</b>, the dataset has been split up into 2 zips which contain 
+          2 sub folders: <i>all_wheels</i> and <i>defect_wheels</i>. This was done due to the
           large size of the wheel dataset. Feel free to use only the first set. None of the images 
-          are equalized, each image is exactly as captured. The distribution of labels is not balanced at
-          all and there is a good chance of defects being contained in the <i>all_wheels</i> folder. 
+          have been equalized or modified in any way. The distribution of labels is not balanced at
+          all. It is possible, but very unlikely that there is a broken wheel in the <i>all_wheels</i> folder. 
           The number of images in each category is broken down in the table below:
         </p>
         <div className="DataTable">
@@ -249,7 +252,7 @@ export class DefectProblem extends Component {
         </div>
         <p>
           <span className="ImageInfo">
-            Rough Size of Images: <b>1200x1200px</b>
+            Rough Size of Images: <b>1100x1100px</b>
           </span>
           <span className="ImageInfo">
             Total Size of Folder: <b>10GB</b> & <b>20GB</b>
