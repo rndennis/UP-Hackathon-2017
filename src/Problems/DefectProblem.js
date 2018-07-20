@@ -8,6 +8,11 @@ import {
   TableRow
 } from '@material-ui/core';
 
+import normalspring from './normalspring.png';
+import brokenspring from './brokenspring.png';
+import normalbrakeshoe from './normalbrakeshoe.png';
+import thinbrakeshoe from './thinbrakeshoe.png';
+
 export class DefectProblem extends Component {
   render() {
     return (
@@ -48,6 +53,46 @@ export class DefectProblem extends Component {
           easier ones first! Good luck!
         </p>
         <div className="ContentHeader">Background</div>
+        <p>
+          <b>Truck Springs</b>: Level 1
+        </p>
+        <p>
+          The easiest of the three defects, Truck Spring, presents a more classical computer vision problem, while still
+          being constrained by a common industry shortcoming. The classes are balanced and there is enough data to work with, 
+          but it would still be better if you had more. The defects themselves are very clear, showing up as cracks in the springs or compressed rings. 
+          It is quite easy to tell when a spring is <i>broken</i> vs. <i>normal</i>. This solid distinction presents a clear feature to work towards identifying, 
+          something that you won't have with the second defect.
+        </p>
+        <p className="ImageWrapper">
+          <img src={normalspring} alt="Normal Truck Spring" height="300px" />
+          <img src={brokenspring} alt="Broken Truck Spring" height="300px" />
+        </p>
+        <p>
+          <b>Brake Shoes</b>: Level 2
+        </p>
+        <p>
+          Unlike Truck Spring, Brake Shoe presents some added difficulties that move it away from the classical classification category.
+          First the set is unbalanced. About 1 in 5 Brake Shoes are considered <i>thin</i>. The second challenge is that drawing the line 
+          between what is a normal Brake Shoe and what is a Defective Brake Shoe is not clear. The feature that defines the defect is the width
+          of the pad (red box area in the images below). <i>Thin</i> Brake Shoes are considered a defect when they are <i>REALLY thin</i> or gone completely.
+          What is considered <i>REALLY thin</i> is open to interpretation and thus a source of bias. So be careful of fully trusting the given labels of this dataset.
+        </p>
+        <p className="ImageWrapper">
+          <img src={normalbrakeshoe} alt="Normal Brake Shoe" height="400px" />
+          <img src={thinbrakeshoe} alt="Thin Brake Shoe" height="400px" />
+        </p>
+        <p>
+          <b>Wheels</b>: Level 3
+        </p>
+        <p>
+          If you are able to reach this object congratulations! Now prepare to REALLY struggle. For Wheels it doesn't even make sense to talk
+          in terms of "balanced datasets". There are 3 <i>defective wheel</i> images, one of which (<i>email_wheel.png</i>) is not even in the same format as the rest of the images, 
+          and 10-30k <i>wheel</i> images. An important distinction between the other objects and this one is that there is no guarantee of labels.
+          There are the 3 confirmed defects and then the rest are essentially unlabeled. However due to the low rate of this type of defect it's safe to assume that it is 
+          very unlikely that any of the wheels in <i>all_wheels</i> is an image of a defect. But if you are unsure please ask! Focus on coming up with a solution that
+          does not rely on having a decent, or any, number of defect examples. This is a very important type of problem, especially here at the railroad.
+        </p>
+        <br />
         <p>
           Due to the intense processing requirements of this problem, there will be Google Cloud VMs to use with a fast CPU, 
           a good amount of RAM, and a K80 GPU. There are 8 available. So depending on the number of teams, either each team will have a box to work with or slots of time 
