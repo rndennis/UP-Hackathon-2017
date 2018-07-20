@@ -37,7 +37,9 @@ p,
   padding: 24px;
 }
 
-.Header a, .DataButtons a {
+.Header a,
+.DataButtons a,
+.Home a {
   text-decoration: none;
 }
 
