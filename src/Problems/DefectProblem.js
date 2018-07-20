@@ -22,7 +22,7 @@ export class DefectProblem extends Component {
       <div>
         <div className="ContentHeader">Description</div>
         <p>
-          Train derailments are can be a catastrophic event for the railroad.
+          Train derailments are a catastrophic event for the railroad.
           They incur large monetary costs to Union Pacific and can cause major
           delays for customers, environmental damage, and even loss of life.
           It's very important, both for business and the communities UP serves,
@@ -119,7 +119,7 @@ export class DefectProblem extends Component {
         <div className="ContentHeader">Data</div>
         <p>
           The data you will be working with can be found at the links below in
-          4 different .zip files:
+          4 different .zip files (start the wheel downloads early, they're big):
         </p>
         <div className="DataButtons">
           <a href="https://storage.googleapis.com/hack-bucket/TruckSpring.zip">
@@ -132,7 +132,7 @@ export class DefectProblem extends Component {
               Brake Shoes <i className={['fas', 'fa-download'].join(' ')} />
             </Button>
           </a>
-          <a href="">
+          <a href="https://storage.googleapis.com/hack-bucket/Wheel_1.zip">
             <Button color="primary">
               Wheels 1 <i className={['fas', 'fa-download'].join(' ')} />
             </Button>

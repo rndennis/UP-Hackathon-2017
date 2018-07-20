@@ -24,9 +24,10 @@
 }
 
 .Meme img {
-  max-width: 350px;
+  max-width: 475px;
 }
 
 .Meme {
   flex-grow: 1;
+  text-align: right;
 }
