@@ -37,7 +37,7 @@ p,
   padding: 24px;
 }
 
-.Header a {
+.Header a, .DataButtons a {
   text-decoration: none;
 }
 
