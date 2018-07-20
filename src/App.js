@@ -7,7 +7,7 @@ import Header from './Header/Header';
 import Home from './Home/Home';
 import Problems from './Problems/Problems';
 import Schedule from './Schedule/Schedule';
-import FAQ from './FAQ/FAQ';
+import Rules from './Rules/Rules';
 import Footer from './Footer/Footer';
 
 import './App.css';
@@ -31,7 +31,7 @@ class App extends Component {
                 <Route exact path="/" component={Home} />
                 <Route path="/problems/:problem" component={Problems} />
                 <Route path="/schedule" component={Schedule} />
-                <Route path="/faq" component={FAQ} />
+                <Route path="/rules" component={Rules} />
                 <Redirect exact from="/problems" to="problems/pricing" />
               </Switch>
             </div>

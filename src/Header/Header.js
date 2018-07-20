@@ -50,8 +50,8 @@ class Header extends Component {
                   Schedule
                 </Button>
               </Link>
-              <Link to="/faq">
-                <Button className={this.state.classes.navButton}>FAQ</Button>
+              <Link to="/rules">
+                <Button className={this.state.classes.navButton}>Rules</Button>
               </Link>
               <IconButton
                 onClick={this.openInNewTab(
