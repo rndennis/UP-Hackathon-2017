@@ -36,6 +36,10 @@ p,
   padding: 24px;
 }
 
+.Header a {
+  text-decoration: none;
+}
+
 p a,
 ul a {
   text-decoration: none;

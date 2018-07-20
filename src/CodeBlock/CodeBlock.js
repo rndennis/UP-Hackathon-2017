@@ -30,23 +30,29 @@ export default class CodeBlock extends Component {
   render() {
     return (
       <div className="Block">
-        <div className="Header" onClick={this.handleClickHeader}>
-          {this.title}
-        </div>
-        {this.state.isOpen ? (
+        <div
+          className={`Header ${!this.state.isOpen ? 'CollapsedHeader' : ''}`}
+          onClick={this.handleClickHeader}
+        >
+          <div>{this.title}</div>
           <div>
-            <pre
-              className="Code"
-              ref={el => {
-                this.openedElement = el;
-              }}
-            >
-              {JSON.stringify(this.code, null, 2)}
-            </pre>
+            {this.state.isOpen ? (
+              <i className={'fas fa-caret-up'} />
+            ) : (
+              <i className={'fas fa-caret-down'} />
+            )}
           </div>
-        ) : (
-          <div className="Spacer" />
-        )}
+        </div>
+        <div className={this.state.isOpen ? 'OpenedCode' : 'CollapsedCode'}>
+          <pre
+            className="Code"
+            ref={el => {
+              this.openedElement = el;
+            }}
+          >
+            {JSON.stringify(this.code, null, 2)}
+          </pre>
+        </div>
       </div>
     );
   }
