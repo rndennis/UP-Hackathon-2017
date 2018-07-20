@@ -37,7 +37,7 @@ class Header extends Component {
         <AppBar>
           <Toolbar className="HeaderToolbar">
             <div className="Logo">
-              <Link to="/problems">{'<up-hackathon/>'}</Link>
+              <Link to="/">{'<up-hackathon/>'}</Link>
             </div>
             <div className="Navigation">
               <Link to="/problems">

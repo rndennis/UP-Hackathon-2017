@@ -1,0 +1,25 @@
+.Home {
+  display: flex;
+  justify-content: center;
+}
+
+.Left {
+  border-right: 1px dotted #cfd8dc;
+  width: 375px;
+}
+
+.Right {
+  font-family: 'Cutive Mono', serif;
+  font-size: 2em;
+  padding-left: 2em;
+  width: 375px;
+}
+
+.YearDisplay {
+  font-size: 3em;
+  line-height: 1em;
+}
+
+.Right i {
+  margin-left: 1em;
+}

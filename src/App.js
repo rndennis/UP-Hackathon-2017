@@ -4,6 +4,7 @@ import { BrowserRouter, Route, Redirect, Switch } from 'react-router-dom';
 import { Paper, MuiThemeProvider, createMuiTheme } from '@material-ui/core';
 
 import Header from './Header/Header';
+import Home from './Home/Home';
 import Problems from './Problems/Problems';
 import Schedule from './Schedule/Schedule';
 import FAQ from './FAQ/FAQ';
@@ -25,15 +26,15 @@ class App extends Component {
         <BrowserRouter>
           <div className="App">
             <Header />
-            <Paper className="AppContent">
+            <div className="AppContent">
               <Switch>
+                <Route exact path="/" component={Home} />
                 <Route path="/problems/:problem" component={Problems} />
                 <Route path="/schedule" component={Schedule} />
                 <Route path="/faq" component={FAQ} />
                 <Redirect exact from="/problems" to="problems/pricing" />
-                <Redirect exact from="/" to="/problems/pricing" />
               </Switch>
-            </Paper>
+            </div>
             <Footer />
           </div>
         </BrowserRouter>
