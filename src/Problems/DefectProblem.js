@@ -11,7 +11,10 @@ import {
 import normalspring from './normalspring.png';
 import brokenspring from './brokenspring.png';
 import normalbrakeshoe from './normalbrakeshoe.png';
+import normalthinbrakeshoe from './normalthinbrakeshoe.png';
 import thinbrakeshoe from './thinbrakeshoe.png';
+import normalwheel from './normalwheel.png';
+import defectivewheel from './defectivewheel.png';
 
 export class DefectProblem extends Component {
   render() {
@@ -81,6 +84,7 @@ export class DefectProblem extends Component {
         </p>
         <p className="ImageWrapper">
           <img src={normalbrakeshoe} alt="Normal Brake Shoe" height="400px" />
+          <img src={normalthinbrakeshoe} alt="Normal Thin Brake Shoe" height="400px" />
           <img src={thinbrakeshoe} alt="Thin Brake Shoe" height="400px" />
         </p>
         <p>
@@ -94,6 +98,10 @@ export class DefectProblem extends Component {
           There are the 3 confirmed defects and then the rest are essentially unlabeled. However due to the low rate of this type of defect it's safe to assume that it is 
           very unlikely that any of the wheels in <i>all_wheels</i> is an image of a defect. But if you are unsure please ask! Focus on coming up with a solution that
           does not rely on having a decent, or any, number of defect examples. This is a very important type of problem, especially here at the railroad.
+        </p>
+        <p className="ImageWrapper">
+          <img src={normalwheel} alt="Normal Wheel" height="400px" />
+          <img src={defectivewheel} alt="Defective Wheel" height="400px" />
         </p>
         <br />
         <p>
@@ -255,7 +263,7 @@ export class DefectProblem extends Component {
             Rough Size of Images: <b>1100x1100px</b>
           </span>
           <span className="ImageInfo">
-            Total Size of Folder: <b>10GB</b> & <b>20GB</b>
+            Total Size of Folder: <b>10.1GB</b> & <b>20.2GB</b>
           </span>
         </p>
       </div>

@@ -39,8 +39,12 @@ export default class Schedule extends Component {
               <span className="Description">Dinner</span>
             </div>
             <div className="Event">
+              <div className="Time">7:00 PM</div>
+              <span className="Description">Side Track 1: Paper Airplane Contest</span>
+            </div>
+            <div className="Event">
               <div className="Time">12:00 AM</div>
-              <span className="Description">Ice Cream & Snacks</span>
+              <span className="Description">Ice Cream & Snacks / Side Track 2: Best Meme Contest</span>
             </div>
             <div className="Event">
               <div className="Time">7:00 AM</div>
@@ -55,6 +59,10 @@ export default class Schedule extends Component {
             <div className="Event">
               <div className="Time">8:30 AM</div>
               <span className="Description">Judgment time</span>
+            </div>
+            <div className="Event">
+              <div className="Time">9:30 AM</div>
+              <span className="Description">Side Track 3: Rock, Paper, Scissors Contest</span>
             </div>
             <div className="Event">
               <div className="Time">10:00 AM</div>
