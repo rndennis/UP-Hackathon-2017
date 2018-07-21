@@ -33,3 +33,7 @@
   border-bottom-left-radius: 4px;
   margin-bottom: 24px;
 }
+
+pre {
+  white-space: pre-wrap;
+}

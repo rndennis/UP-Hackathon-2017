@@ -23,9 +23,9 @@ export class DefectProblem extends Component {
         <div className="ContentHeader">Description</div>
         <p>
           Train derailments are a catastrophic event for the railroad. They
-          incur large monetary costs to Union Pacific and can cause major delays
+          incur large monetary costs to Union Pacific, can cause major delays
           for customers, environmental damage, and even loss of life. It's very
-          important, both for business and the communities UP serves, that these
+          important, both for the business and the communities UP serves, that these
           derailments be mitigated.
         </p>
         <p>
@@ -52,10 +52,11 @@ export class DefectProblem extends Component {
         </ol>
         <p>
           You should think creatively about how to efficiently and effectively
-          detect these defects. Your solutions will be judged based on how well
+          detect these defects. Focus on measuring your success using <a href="https://en.wikipedia.org/wiki/Precision_and_recall" target="_blank">precision and recall</a> numbers. 
+          Your solutions will be judged based on how well
           you accomplish this, and for how many defects you are able to create
-          solutions. The difficulty ramps up, but make sure you get good
-          solutions for the easier ones first! Good luck!
+          solutions. The difficulty ramps up! So while you are free to jump around, 
+          keep in mind the time you're committing to each. Good luck!
         </p>
         <div className="ContentHeader">Background</div>
         <p>
@@ -92,10 +93,10 @@ export class DefectProblem extends Component {
         <p>
           Unlike Truck Spring, Brake Shoe presents some added difficulties that
           move it away from the classical classification category. First the set
-          is unbalanced. About 1 in 5 Brake Shoes in the data set have been
+          is unbalanced. Only about 1 in 5 Brake Shoes in the data set have been
           labeled <i>thin</i>. The second challenge is that drawing the line
-          between what is a <i>normal</i> Brake Shoe and what is a Defective
-          Brake Shoe is not clear. The feature that defines the defect is the
+          between what is a <i>normal</i> Brake Shoe and what is a <i>defective/thin</i> Brake 
+          Shoe is not clear. The feature that defines the defect is the
           width of the pad (red box area in the images below). <i>Thin</i> Brake
           Shoes are considered a defect when they are <i>REALLY thin</i> or gone
           completely. What is considered <i>REALLY thin</i> is open to
@@ -131,16 +132,16 @@ export class DefectProblem extends Component {
         <p>
           If you are able to reach this object congratulations! Now prepare to
           REALLY struggle. For Wheels it doesn't even make sense to talk in
-          terms of "balanced datasets". There are only 3 <i>defective wheel</i>{' '}
-          images, one of which (<i>wheel_emailed_defect.png</i>) is not even in
-          the same format as the rest of the images, and 10-30k <i>wheel</i>{' '}
+          terms of "balanced datasets". There are only 3 <i>defective</i> wheel 
+          images, one of which one (<i>wheel_emailed_defect.png</i>) is not even in
+          the same format as the rest, and 10-30k other wheel 
           images. An important distinction between the other objects and this
           one is that there is no guarantee of labels. There are the 3 confirmed
           defects and then the rest are essentially unlabeled. However due to
           the low rate of this type of defect it's safe to assume that it is
           very unlikely that any of the wheels in <i>all_wheels</i> is an image
-          of a defect. But if you are unsure please ask! Focus on coming up with
-          a solution that does not rely on having a decent, or any, number of
+          of a defect. But if you see something you are unsure of please ask! 
+          Focus on coming up with a solution that does not rely on having a decent, or any, number of
           defect examples. This is a very important type of problem, especially
           here at the railroad.
         </p>
@@ -172,8 +173,10 @@ export class DefectProblem extends Component {
           To use one of these boxes, please talk to Andrew or Dan or post in the{' '}
           <i>#defects</i> channel. You will be given 3 pieces of information: a
           username, password, and ssh key. To ssh into the box on Windows we
-          recommend you use PuTTY. On Mac or Linux you should be able to use the
-          standard ssh cmd tool. If you have any issues logging in, installing
+          recommend you use <a href="https://www.putty.org/" target="_blank">PuTTY</a>. On Mac or Linux you should be able to use the
+          standard ssh cmd tool. The data has already been transferred there to save some time, but if you want 
+          to move some modified data over you can use <a href="https://github.com/jimradford/superputty" target="_blank">SuperPuTTY's</a> file transfer 
+          or scp. If you have any issues logging in, installing
           things, or are unfamiliar with how to use ssh please ask for help!
         </p>
         <div className="ContentHeader">Data</div>
@@ -204,9 +207,9 @@ export class DefectProblem extends Component {
           </a>
         </div>
         <p>
-          For <b>Truck Springs</b> the zip contains 3 sub folders:
+          For <b>Truck Springs</b> the zip contains 3 sub folders: {' '}
           <i>training</i>, <i>testing</i>, and <i>validation</i>. Each of those
-          contains images of Truck Springs sorted into <i>normal</i> and
+          contains images of Truck Springs sorted into <i>normal</i> and {' '}
           <i>broken</i> folders based on their label. All of the images are
           equalized. The distribution between the labels is balanced and it is
           highly unlikely that there are incorrectly labeled images. The large
@@ -249,7 +252,7 @@ export class DefectProblem extends Component {
           </span>
         </p>
         <p>
-          For <b>Brake Shoes</b> the zip contains 2 sub folders:
+          For <b>Brake Shoes</b> the zip contains 2 sub folders: {' '}
           <i>training</i> and <i>testing</i>. Each of those contains images of
           Brake Shoes sorted into <i>normal</i> and <i>thin</i> folders based on
           their labels. Some of the images are equalized. The distribution

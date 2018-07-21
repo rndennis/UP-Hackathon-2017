@@ -22,10 +22,10 @@ export class PricingProblem extends Component {
           However when it comes to rail transportation, the process is tedious and slow.
         </p>
         <p>
-          It requires customers to fill out forms with every little detail about their company and what they are trying to ship. 
+          This process requires customers to fill out forms with every little detail about their company and what they are trying to ship. 
           Then, after submitting those forms, they have to wait up to 20 days to receive a quote from a pricing representative! 
           Even after all of these hoops there are still more steps before the customer can actually ship their product. All of 
-          these issues make it hard for the customer to find the best option for their company to ship products.  
+          these issues make it hard for the customer to find the best option for their company.  
         </p>
         <p>
           For this problem, the task is to design and prototype an easy to use cross-rail pricing user interface.
@@ -37,7 +37,7 @@ export class PricingProblem extends Component {
         <p>
           When a customer is trying to ship something they know a few things. What they want to ship, where they want to ship from, 
           and where they want to ship to. They might know a few other things, but they always have to know these things and should be able 
-          to get a base quote based on them.
+          to get a base quote based just on them.
         </p>
         <p>
           Allowing customers to "shop around" and find the best option for their needs is important. Just like someone would shop for flights, 

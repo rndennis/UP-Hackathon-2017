@@ -167,8 +167,8 @@ export class AssistantProblem extends Component {
           with us. Their employees (by extension, our customers as well) use our
           tracking and shipment management applications to monitor and handle
           shipments with us. With their environment forcing them to don down
-          parkas and gloves, it's impossible to effectively navigate our systems
-          without removing their gloves. This particular customer was only able
+          parkas and gloves, it's impossible to effectively navigate our systems. 
+          This particular customer was only able
           to track one or two cars at a time, simply because they couldn't keep
           their gloves off for long enough to type any more. What if they didn't
           have to take off their gloves at all?
