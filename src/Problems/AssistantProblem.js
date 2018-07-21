@@ -202,8 +202,8 @@ export class AssistantProblem extends Component {
         <p>
           Every customer should be associated with one or more locations (often
           also referred to as firms). They don't typically know their "firm
-          number"; it's unique identifier that we use internally. Instead, they
-          think of themselves as a name of a company and, often times, they
+          number"; it's a unique identifier that we use internally. Instead,
+          they think of themselves as a name of a company and, often times, they
           might use city and state to distinguish themselves (e.g. Kellogg's in
           Battle Creek, Michigan and Kellogg's in Omaha, Nebraska).
         </p>
@@ -228,10 +228,10 @@ export class AssistantProblem extends Component {
           There are many more steps involved in this process. To progress
           through the cycle, a customer must "order" a car into their industry
           and they must "release" equipment from their industry. And, of course,
-          there are can be unpredictable snags along the way. If an exception
-          occurs at any of these states, customers need to be informed as soon
-          as possible. And, if there are any outstanding service issues,
-          customers value timely updates as well.
+          there can be unpredictable snags along the way. If an exception occurs
+          at any of these states, customers need to be informed as soon as
+          possible. And, if there are any outstanding service issues, customers
+          value timely updates as well.
         </p>
         <div className="ContentHeader">Data</div>
         <p>
@@ -247,10 +247,11 @@ export class AssistantProblem extends Component {
         <p>
           Below is some mocked data that you can use for your assistant. You are
           not, however, limited to just this data. If you can think of anything
-          else that might be useful for customers, feel free to pursue it. The
-          accuracy of the data isn't as important as the interaction models you
-          build with your assistant. If you have any questions, feel free to ask
-          in the #assistant channel or come ask Renee directly.
+          else that might be useful for customers, feel free to pursue it. For
+          this event, the accuracy of the data isn't as important as the
+          interaction models you build with your assistant. If you have any
+          questions, feel free to ask in the #assistant channel or come ask
+          Renee directly.
         </p>
         <div>
           <CodeBlock title="Mock Car/Equipment" code={mockEquipment} />
