@@ -137,7 +137,7 @@ export class DefectProblem extends Component {
               Wheels 1 <i className={['fas', 'fa-download'].join(' ')} />
             </Button>
           </a>
-          <a href="">
+          <a href="https://storage.googleapis.com/hack-bucket/Wheel_2.zip">
             <Button color="primary">
               Wheels 2 <i className={['fas', 'fa-download'].join(' ')} />
             </Button>
