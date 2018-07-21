@@ -1,22 +1,32 @@
 .Home {
   display: flex;
+  align-content: center;
+  justify-content: center;
+  flex-wrap: wrap;
+  flex: 1;
+  margin-top: -94px;
+}
+
+.Divider {
+  border-right: 1px dotted #cfd8dc;
+}
+
+.Home .Left img,
+.Home .Right {
+  width: 400px;
+}
+
+.Home .Right {
+  font-family: 'Cutive Mono', serif;
+  font-size: 2em;
+  padding-left: 1.5em;
+  display: flex;
+  flex-direction: column;
   justify-content: center;
 }
 
-.Left {
-  border-right: 1px dotted #cfd8dc;
-  width: 375px;
-}
-
-.Right {
-  font-family: 'Cutive Mono', serif;
-  font-size: 2em;
-  padding-left: 2em;
-  width: 375px;
-}
-
 .YearDisplay {
-  font-size: 3em;
+  font-size: 2.5em;
   line-height: 1em;
 }
 

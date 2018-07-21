@@ -40,11 +40,16 @@ export default class Schedule extends Component {
             </div>
             <div className="Event">
               <div className="Time">7:00 PM</div>
-              <span className="Description">Side Track 1: Paper Airplane Contest</span>
+              <span className="Description">
+                Side Track 1: Paper Airplane Contest
+              </span>
             </div>
             <div className="Event">
               <div className="Time">12:00 AM</div>
-              <span className="Description">Ice Cream & Snacks / Side Track 2: Best Meme Contest</span>
+              <span className="Description">
+                <div>Ice Cream & Snacks</div>
+                <div>Side Track 2: Best Meme Contest</div>
+              </span>
             </div>
             <div className="Event">
               <div className="Time">7:00 AM</div>
@@ -62,7 +67,9 @@ export default class Schedule extends Component {
             </div>
             <div className="Event">
               <div className="Time">9:30 AM</div>
-              <span className="Description">Side Track 3: Rock, Paper, Scissors Contest</span>
+              <span className="Description">
+                Side Track 3: Rock, Paper, Scissors Contest
+              </span>
             </div>
             <div className="Event">
               <div className="Time">10:00 AM</div>

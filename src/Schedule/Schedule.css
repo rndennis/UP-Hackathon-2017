@@ -1,9 +1,22 @@
 .Schedule {
-  text-align: center;
   display: flex;
   flex-direction: row;
   line-height: 2.5em;
   padding: 24px;
+  flex-wrap: wrap;
+}
+
+.Meme {
+  display: flex;
+  flex-grow: 1;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+
+.Meme img {
+  width: 450px;
+  min-width: 250px;
 }
 
 .Event {
@@ -21,13 +34,4 @@
   margin-left: 1em;
   width: 20em;
   text-align: left;
-}
-
-.Meme img {
-  max-width: 475px;
-}
-
-.Meme {
-  flex-grow: 1;
-  text-align: right;
 }

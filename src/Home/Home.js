@@ -13,19 +13,22 @@ export default class Home extends Component {
     return (
       <div className="Home">
         <div className="Left">
-          <img src={sketchlogo} alt="Logo" width="375px" />
+          <img src={sketchlogo} alt="Logo" />
         </div>
+        <div className="Divider" />
         <div className="Right">
-          Welcome to the<br />
-          <span className="YearDisplay">2018</span>
-          <br />
-          Union Pacific Intern Hackathon!
           <div>
-            <Link to="/problems">
-              <Button variant="contained" color="primary">
-                Start Hacking <i className={'fas fa-terminal'} />
-              </Button>
-            </Link>
+            Welcome to the<br />
+            <div className="YearDisplay">2018</div>
+            Union Pacific<br />
+            Intern Hackathon!
+            <div>
+              <Link to="/problems">
+                <Button variant="contained" color="primary">
+                  Start Hacking <i className={'fas fa-terminal'} />
+                </Button>
+              </Link>
+            </div>
           </div>
         </div>
       </div>
