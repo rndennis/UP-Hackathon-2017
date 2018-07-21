@@ -33,6 +33,9 @@ export default class CodeBlock extends Component {
         <div
           className={`Header ${!this.state.isOpen ? 'CollapsedHeader' : ''}`}
           onClick={this.handleClickHeader}
+          ref={el => {
+            this.openedElement = el;
+          }}
         >
           <div>{this.title}</div>
           <div>
@@ -44,14 +47,7 @@ export default class CodeBlock extends Component {
           </div>
         </div>
         <div className={this.state.isOpen ? 'OpenedCode' : 'CollapsedCode'}>
-          <pre
-            className="Code"
-            ref={el => {
-              this.openedElement = el;
-            }}
-          >
-            {JSON.stringify(this.code, null, 2)}
-          </pre>
+          <pre className="Code">{JSON.stringify(this.code, null, 2)}</pre>
         </div>
       </div>
     );

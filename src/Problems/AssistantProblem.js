@@ -6,35 +6,144 @@ import conversation from './conversation.png';
 import CodeBlock from '../CodeBlock/CodeBlock';
 
 const mockEquipment = {
-  id: 'SHMC1234',
+  id: 'SHMC6134',
   empty: false,
-  commodity: 'Beer',
-  carType: '',
-  completedEvents: [],
-  scheduledEvents: [],
-  serviceIssues: []
-};
-
-const mockServiceIssue = {
-  dateOpened: '',
-  dateLastUpdated: '',
-  reason: '',
-  status: '',
-  equipmentId: '',
-  referenceNumber: '',
-  comments: [
+  commodity: 'Coal',
+  carType: 'Uncovered Hopper',
+  serviceIssue: {
+    referenceNumber: '00516',
+    status: 'Open'
+  },
+  eta: '2018-07-23T05:04:00.000-05:00',
+  completedEvents: [
     {
-      dateCreated: '',
-      author: '',
-      company: '',
-      comments: ''
+      name: 'Released for Movement',
+      dateTime: '2018-06-04T13:47:00.000-05:00',
+      location: { city: 'Stexlead', state: 'TX' }
+    },
+    {
+      name: 'Pulled from Industry ',
+      dateTime: '2018-06-12T09:07:00.000-05:00',
+      location: { city: 'Stexlead', state: 'TX' }
+    },
+    {
+      name: 'Arrived ',
+      dateTime: '2018-06-12T10:09:00.000-05:00',
+      location: { city: 'Stexlead', state: 'TX' }
+    },
+    {
+      name: 'Departed ',
+      dateTime: '2018-06-22T11:02:00.000-05:00',
+      location: { city: 'Stexlead', state: 'TX' }
+    },
+    {
+      name: 'Arrived ',
+      dateTime: '2018-06-22T14:20:00.000-05:00',
+      location: { city: 'Texarkana', state: 'AR' }
+    },
+    {
+      name: 'General Hold',
+      dateTime: '2018-06-25T22:12:00.000-05:00',
+      location: { city: 'Texarkana', state: 'AR' }
+    },
+    {
+      name: 'Released from Hold ',
+      dateTime: '2018-07-05T15:57:00.000-05:00',
+      location: { city: 'Texarkana', state: 'AR' }
+    }
+  ],
+  scheduledEvents: [
+    {
+      name: 'Scheduled Departure',
+      dateTime: '2018-07-21T11:15:00.000-05:00',
+      location: { city: 'Stexlead', state: 'TX' }
+    },
+    {
+      name: 'Scheduled Arrival',
+      dateTime: '2018-07-21T20:00:00.000-05:00',
+      location: { city: 'Texarkana', state: 'AR' }
+    },
+    {
+      name: 'Scheduled Departure',
+      dateTime: '2018-07-22T23:11:00.000-05:00',
+      location: { city: 'Texarkana', state: 'AR' }
+    },
+    {
+      name: 'Scheduled Arrival',
+      dateTime: '2018-07-23T05:04:00.000-05:00',
+      location: { city: 'Nlitrock', state: 'AR' }
+    },
+    {
+      name: 'Scheduled Departure',
+      dateTime: '2018-07-24T13:00:00.000-05:00',
+      location: { city: 'Nlitrock', state: 'AR' }
     }
   ]
 };
 
-const mockNotification = {
-  type: '',
-  dateTime: ''
+const mockServiceIssue = {
+  dateOpened: '2018-07-20T13:05:01.000-05:00',
+  dateLastUpdated: '2018-07-21T09:24:15.000-05:00',
+  reason: 'Load Shift',
+  status: 'Service Plan Available',
+  equipmentId: 'ABOX16092',
+  referenceNumber: '31537',
+  comments: [
+    {
+      dateCreated: '2018-07-21T09:24:15.000-05:00',
+      author: 'Bob Houghton',
+      company: 'Union Pacific Railroad',
+      comments:
+        'Yes, I verified that the car was inspected and we are waiting for it to be adjusted.'
+    },
+    {
+      dateCreated: '2018-07-21T07:15:10.000-05:00',
+      author: 'Alice Potter',
+      company: 'Random Corp',
+      comments: 'Has this equipment been inspected yet?'
+    },
+    {
+      dateCreated: '2018-07-20T13:05:01.000-05:00',
+      author: 'Bob Houghton',
+      company: 'Union Pacific Railroad',
+      comments:
+        'This equipment has been placed in load shift hold. Please contact our Shipment Quality team at 555-555-5555 if you have any questions'
+    }
+  ]
+};
+
+const mockNotifications = [
+  {
+    type: 'Bad Order',
+    dateTime: '2018-07-19T15:21:00.000-05:00',
+    description:
+      'Your shipment has been identified as having a mechanical defect, having a safety violation, or having been loaded improperly.',
+    etd: ''
+  },
+  {
+    type: 'Placed at Industry',
+    dateTime: '2018-07-20T12:35:16.000-05:00',
+    description:
+      'Your shipment is in an accessible position for loading/unloading.'
+  },
+  {
+    type: 'Service Interruption',
+    dateTime: '2018-07-15T06:22:34.000-05:00',
+    description:
+      'An event has caused normal train movement at a location, impacting crews, locomotives, trains, and shipments.'
+  }
+];
+
+const MockPriceQuoteRequest = {
+  origin: {
+    city: 'Omaha',
+    state: 'Nebraska'
+  },
+  destination: {
+    city: 'Los Angeles',
+    state: 'California'
+  },
+  commodity: 'Corn'
 };
 
 export class AssistantProblem extends Component {
@@ -132,13 +241,25 @@ export class AssistantProblem extends Component {
           how to approach this particular problem. We hope that you can think
           outside of the box, extrapolate, and derive some fresh ideas. However,
           we do want to give you some examples of critical and common
-          information associated with cars/equipment, exceptions, service
-          issues, etc.
+          information associated with cars/equipment, notifications, exceptions,
+          service issues, etc.
+        </p>
+        <p>
+          Below is some mocked data that you can use for your assistant. You are
+          not, however, limited to just this data. If you can think of anything
+          else that might be useful for customers, feel free to pursue it. The
+          accuracy of the data isn't as important as the interaction models you
+          build with your assistant. If you have any questions, feel free to ask
+          in the #assistant channel or come ask Renee directly.
         </p>
         <div>
           <CodeBlock title="Mock Car/Equipment" code={mockEquipment} />
           <CodeBlock title="Mock Service Issue" code={mockServiceIssue} />
-          <CodeBlock title="Mock Notification" code={mockNotification} />
+          <CodeBlock title="Mock Notifications" code={mockNotifications} />
+          <CodeBlock
+            title="Mock Price Quote Request"
+            code={MockPriceQuoteRequest}
+          />
         </div>
       </div>
     );
