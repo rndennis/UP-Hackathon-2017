@@ -18,14 +18,14 @@ class Rules extends Component {
           </p>
           <p>
             Between 1:40-2:00pm Saturday teams will have a chance to switch problems after seeing how many teams are working 
-            on each for competitive purposes. We do this due to the judging format this year which is discussed below. Again to switch please 
+            on each for competitive purposes. We do this due to the judging format this year which is discussed below. Again, to switch, please 
             let someone know. Once 2:00pm roles around you are locked into your commitment. 
           </p>
           <div className="ContentHeader">Judging and Prizes</div>
           <p>
-            Judging will be preformed by a panel of judges composed of three judge types. There will be "Executive" judges who will judge all teams, across all problems. 
+            Judging will be preformed by a panel of judges composed of three judge types. There will be "Executive" judges, who will judge all teams across all problems. 
             Then there will be problem specific judges, one "Developer" judge and one "Business Partner" judge. These judges were chosen due to their expertise on each problem 
-            and will only judge teams that worked on their assigned problem. All judges will be judging according to a rubric of four categories:
+            and will only judge teams that worked on their assigned problem for the Problem Prizes. All judges will be judging according to a rubric of four categories:
           </p>
           <ul className="UnstyledList">
             <li>
@@ -90,10 +90,10 @@ class Rules extends Component {
           </ul>
 
           <p>
-            In the case that there is only one team in a category THEY WILL WIN THE PROBLEM PRIZE BY DEFAULT.
+            <b>NOTE:</b> In the case that there is only one team in a category THEY WILL WIN THE PROBLEM PRIZE BY DEFAULT.
           </p>
           <p>
-            In the case that there is only one team in a category and the are chosen as the Grand Prize Winner. The 
+            <b>NOTE:</b> In the case that there is only one team in a category and the are chosen as the Grand Prize Winner. The 
             same process that was used to chose the Grand Prize Winner will be used to select the "Second Place Prize Winner" and 
             they will be rewarded the remaining Problem Prize.
           </p>

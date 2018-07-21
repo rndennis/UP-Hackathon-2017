@@ -72,10 +72,20 @@ export class DefectProblem extends Component {
           presents a clear feature to work towards identifying, something that
           you won't have with the second defect.
         </p>
-        <p className="ImageWrapper">
-          <img src={normalspring} alt="Normal Truck Spring" height="300px" />
-          <img src={brokenspring} alt="Broken Truck Spring" height="300px" />
-        </p>
+        <div className="ImageWrapper">
+          <div className="Image">
+            <img src={normalspring} alt="Normal Spring" height="400px" />
+            <div>
+              <small>Normal</small>
+            </div>
+          </div>
+          <div className="Image">
+            <img src={brokenspring} alt="Broken Spring" height="400px" />
+            <div>
+              <small>Broken</small>
+            </div>
+          </div>
+        </div>
         <p>
           <b>Brake Shoes</b>: Level 2
         </p>
@@ -95,15 +105,26 @@ export class DefectProblem extends Component {
           "noise" we mean that only a fraction of the pixels in each image are
           relevant for classifying the image.
         </p>
-        <p className="ImageWrapper">
-          <img src={normalbrakeshoe} alt="Normal Brake Shoe" height="400px" />
-          <img
-            src={normalthinbrakeshoe}
-            alt="Normal Thin Brake Shoe"
-            height="400px"
-          />
-          <img src={thinbrakeshoe} alt="Thin Brake Shoe" height="400px" />
-        </p>
+        <div className="ImageWrapper">
+          <div className="Image">
+            <img src={normalbrakeshoe} alt="Normal Brake Shoe" height="400px" />
+            <div>
+              <small>Normal</small>
+            </div>
+          </div>
+          <div className="Image">
+            <img src={normalthinbrakeshoe} alt="Normal Brake Shoe" height="400px" />
+            <div>
+              <small>Normal</small>
+            </div>
+          </div>
+          <div className="Image">
+            <img src={thinbrakeshoe} alt="Thin Brake Shoe" height="400px" />
+            <div>
+              <small>Thin</small>
+            </div>
+          </div>
+        </div>
         <p>
           <b>Wheels</b>: Level 3
         </p>
@@ -127,13 +148,13 @@ export class DefectProblem extends Component {
           <div className="Image">
             <img src={normalwheel} alt="Normal Wheel" height="400px" />
             <div>
-              <small>Label</small>
+              <small>Normal</small>
             </div>
           </div>
           <div className="Image">
             <img src={defectivewheel} alt="Defective Wheel" height="400px" />
             <div>
-              <small>Label</small>
+              <small>Defective</small>
             </div>
           </div>
         </div>

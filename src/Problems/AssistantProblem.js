@@ -181,13 +181,15 @@ export class AssistantProblem extends Component {
           text-based, voice-based or both, that could help make working with us
           as seamless as possible.
         </p>
-        <p className="ImageWrapper">
-          <img
-            className="ConversationImage"
-            src={conversation}
-            alt="Sample conversation"
-          />
-        </p>
+        <div className="ImageWrapper">
+          <div className="Image">
+            <img
+              className="ConversationImage"
+              src={conversation}
+              alt="Sample conversation"
+            />
+          </div>
+        </div>
         <div className="ContentHeader">Background</div>
         <p>
           While equipment (or car) tracking and ETA inquiry is one of the most
@@ -217,13 +219,15 @@ export class AssistantProblem extends Component {
           currently at their industry yard. A simplified graphic representation
           of this "lifecycle" is shown below.
         </p>
-        <p className="ImageWrapper">
-          <img
-            className="LifecycleImage"
-            src={lifecycle}
-            alt="Shipment lifecycle"
-          />
-        </p>
+        <div className="ImageWrapper">
+          <div className="Image">
+            <img
+              className="LifecycleImage"
+              src={lifecycle}
+              alt="Shipment lifecycle"
+            />
+          </div>
+        </div>
         <p>
           There are many more steps involved in this process. To progress
           through the cycle, a customer must "order" a car into their industry
