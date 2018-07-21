@@ -2,18 +2,24 @@
   display: flex;
   align-content: center;
   justify-content: center;
-  flex-wrap: wrap;
   flex: 1;
+  flex-wrap: wrap;
   margin-top: -94px;
-}
-
-.Divider {
-  border-right: 1px dotted #cfd8dc;
 }
 
 .Home .Left img,
 .Home .Right {
   width: 400px;
+}
+
+.Home .Left {
+  display: flex;
+  align-content: center;
+}
+
+.Home .Left img {
+  align-self: center;
+  border-right: 1px dotted #cfd8dc;
 }
 
 .Home .Right {
