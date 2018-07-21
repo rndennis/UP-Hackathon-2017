@@ -250,8 +250,8 @@ export class AssistantProblem extends Component {
           else that might be useful for customers, feel free to pursue it. For
           this event, the accuracy of the data isn't as important as the
           interaction models you build with your assistant. If you have any
-          questions, feel free to ask in the #assistant channel or come ask
-          Renee directly.
+          questions, feel free to ask in the <i>#assistant</i> channel or come
+          ask Renee directly.
         </p>
         <div>
           <CodeBlock title="Mock Car/Equipment" code={mockEquipment} />
